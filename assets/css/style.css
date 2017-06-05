@@ -2,6 +2,10 @@
 	min-height: 80px;
 }
 
+.navbar {
+	margin-bottom: -5px;
+}
+
 .navbar-brand {
 	padding: 15px;
 	height: 80px;
@@ -40,13 +44,25 @@
 }
 
 .jumbotron {
-	padding-top: 20px;
+	padding-top: 110px;
 	color: white;
 	background-image: url(../img/wood.jpg);
 	text-align: center;
 	background-repeat: no-repeat;
 	min-height: 484px;
 	background-size: cover;
+}
+
+.container {
+	margin-bottom: 50px;
+}
+
+#name {
+	font-size: 70px;
+}
+
+#phrase {
+	color: peru;
 }
 
 .hovlight:hover h3 {
@@ -89,6 +105,10 @@ p, li {
 
 .bold {
 	font-weight: bold;
+}
+
+.border {
+	border: 1px solid black;
 }
 
 .panel > .panel-heading {
