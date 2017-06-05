@@ -1,109 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<title>Alex Lipianu</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<meta name="description" content="Alex Lipianu Website">
+		<title>Alex Lipianu</title>
 		
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-		
-		
-		<style>
-		.navbar-fixed-top {
-			min-height: 80px;
-		}
-		
-		.navbar-brand {
-			padding: 15px;
-			height: 80px;
-			line-height: 80px;
-			margin-left: 30px;
-		}
-		
-		.navbar-toggle {
-			margin-top: 20px;
-			margin-right: 30px;
-		}
-		
-		.navbar-nav > li > a {
-			padding-top: 0px;
-			padding-bottom: 0px;
-			line-height: 80px;
-		}
-		
-		.nav a {
-			color: white;
-			font-size: 1.4em;
-		}
-
-		@media (max-width: 767px) {
-			.navbar-nav > li > a {
-				line-height: 20px;
-				padding-top: 10px;
-				padding-bottom: 10px;
-			}
-		}
-		
-		.jumbotron {
-			padding-top: 100px;
-			color: white;
-			background-image: url(assets/images/desk.jpg);
-			text-align: center;
-			background-repeat: no-repeat;
-			min-height: 484px;
-			background-size: cover;
-		}
-		
-		#computer {
-			
-		}
-		
-		#server {
-			padding-top: 0px;
-			padding-bottom: 0px;
-		}
-		
-		#brain {
-			padding-top: 0px;
-		}
-		
-		#eye {
-		
-		}
-		
-		
-		</style>
-		
-		
-		
-		
-		
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 	</head>
+	
 	<body>
 		<!-- Navbar -->
-		<nav class="navbar navbar-inverse navbar-fixed-top" id="navbar">
+		<nav class="navbar navbar-inverse" id="navbar" style="margin-bottom:0px;">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="#logo">
-						<img alt="logo" src="assets/images/logo.png">
+					<a class="navbar-brand" href="http://alipianu.github.io">
+						<img alt="logo" src="assets/img/logoperu.png">
 					</a>
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+					<button id="btn-collapse" type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>						
+						<span class="icon-bar"></span>
 					</button>
 				</div>
 				<div class="collapse navbar-collapse" id="navbar-collapse">
 					<ul class="nav navbar-nav navbar-right">
 						<li><a class="scrollto" href="#about">About</a>
 						<li><a class="scrollto" href="#interest">Interests</a>
-						<li><a class="scrollto" href="#school">Education</a>
+						<li><a class="scrollto" href="#education">Education</a>
 						<li><a class="scrollto" href="#project">Projects</a>
 						<li><a class="scrollto" href="#hackathon">Hackathons</a>
-						<li><a class="scrollto" href="#contact">Contact</a>
 					</ul>
 				</div>
 			</div>
@@ -112,11 +42,11 @@
 		
 		<!-- jumbotron -->
 		<div class="jumbotron">
-			<div class="container text-center">
-				<br/><br/><br/><br/><br/>
+			<div class="container text-center jumbo-up">
+				<br/><br/><br/><br/>
 				<h1 style="font-size:70px">Alex Lipianu</h1>
 				<br/>
-				<p>Computer Scientist     |     Programmer</p>
+				<h3>Computer Scientist	|	Programmer</h3>
 			</div>
 		</div>
 		
@@ -128,12 +58,16 @@
 					<h1>About</h1>
 				</div>
 				<div class="rows">
-					<div class="col-sm-4">
-						<img src="assets/images/headshot.png" class="img-responsive img-circle" alt="headshot">
-					</div>
-					<div class="col-sm-8">
-						<h2>Hi there, I'm Alex!</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam rutrum eget lorem a placerat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus a tincidunt elit, nec fermentum mauris. Curabitur egestas egestas neque, quis gravida purus volutpat non. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id semper ligula, eget accumsan purus. Suspendisse interdum magna nec turpis pellentesque placerat. Vestibulum venenatis massa nec quam pellentesque tincidunt. Phasellus mollis rutrum sapien et cursus. Sed scelerisque dui dolor, at viverra erat accumsan at. Phasellus tempor pharetra pellentesque. Quisque a porttitor magna. Aenean accumsan lectus non felis ornare vehicula. </p>
+					<div class="col-sm-4 vcenter about-left">
+						<img src="assets/img/headshot.png" class="img-responsive img-circle" alt="headshot">
+					</div><!--
+					--><div class="col-sm-8 vcenter about-right">
+						<br/>
+						<h2 style="color:peru;">Hi there, I'm Alex!</h2>
+						<br/>
+						<p>I’m a Grade 12 student currently attending Centennial Secondary School in Welland, Ontario. This upcoming fall I will begin post-secondary education at the University of Waterloo as I pursue a Bachelors Degree in Computer Science with a minor in Combinatorics and Optimization.</p>
+						<p>In the workplace, I’m very enthusiastic, hardworking, and adaptable. I’m passionate about programming and always eager to expand my knowledge in all aspects of software and electronics.</p>
+						<p>In day-to-day life, I’m a very active guy who enjoys playing soccer, travelling, exploring, and exercising. I appreciate the little things in life, and always persevere regardless of what's thrown my way.</p>
 					</div>
 				</div>
 			</section>
@@ -147,29 +81,29 @@
 				<div class="page-header text-center" id="interest">
 					<h1>Interests</h1>
 				</div>
-				<p class="text-center">Nulla mauris tellus, euismod eget augue id, dictum rutrum libero. Duis pharetra dui at tellus ullamcorper, sit amet semper leo ultrices. Maecenas elementum velit et tortor efficitur posuere.</p>
+				<p class="text-center">There’s many different applications of programming and computer science that interest me. Here are my main interests, which I plan to learn more about and experiment with throughout my time in university:</p>
 				<div class="rows">
-					<div class="col-sm-3 text-center">
+					<div class="col-sm-3 text-center hovlight hovgrow interests-down">
 						<br/><br/>
-						<img id="computer" src="assets/images/pc.png" class="img-responsive center-block" alt="computer">
+						<img src="assets/img/pc.png" class="img-responsive center-block" alt="computer">
 						<h3>Computer Graphics</h3>
 						<p>I'm actively learning various low-level graphics programming concepts on my own through DirectX 12 and other graphics API's.</p>
 					</div>
-					<div class="col-sm-3 text-center">
+					<div class="col-sm-3 text-center hovlight hovgrow interests-down">
 						<br/><br/>
-						<img id="server" src="assets/images/server.png" class="img-responsive center-block" alt="server">
-						<h3>Backend & Embedded Systems</h3>
-						<p>I have a lot of experience with extending enterprise enhancing software.</p>
+						<img src="assets/img/server.png" class="img-responsive center-block" alt="server">
+						<h3>Backend Development</h3>
+						<p>I’m very knowledgeable and experienced with C#/.NET, a technology widely used for backend web development.</p>
 					</div>
-					<div class="col-sm-3 text-center">
+					<div class="col-sm-3 text-center hovlight hovgrow interests-down">
 						<br/><br/>
-						<img id="brain" src="assets/images/brain.png" class="img-responsive center-block" alt="brain">
+						<img src="assets/img/brain.png" class="img-responsive center-block" alt="brain">
 						<h3>AI</h3>
 						<p>I always strive to incorporate intelligent enemies that inhibit human-like movement and fighting patterns in my videogames.</p>
 					</div>
-					<div class="col-sm-3 text-center">
+					<div class="col-sm-3 text-center hovlight hovgrow interests-down">
 						<br/><br/>
-						<img id="eye" src="assets/images/eye.png" class="img-responsive center-block" alt="eye">
+						<img src="assets/img/eye.png" class="img-responsive center-block" alt="eye">
 						<h3>Computer Vision</h3>
 						<p>I've always been fascinated with machines that possess the ability to see and comprehend their surroundings.</p>
 					</div>
@@ -179,15 +113,15 @@
 		<br/><br/>
 		
 		
-		<!-- School -->
+		<!-- Education -->
 		<div class="container">
 			<section>
 				<div class="page-header text-center" id="education">
 					<h1>Education</h1>
 				</div>
-				<p class="text-center">Nulla mauris tellus, euismod eget augue id, dictum rutrum libero. Duis pharetra dui at tellus ullamcorper, sit amet semper leo ultrices. Maecenas elementum velit et tortor efficitur posuere.</p>
+				<p class="text-center">School is more than just a place to learn. School is a nurturing community, one where you can get involved and make a difference. School is what you make of it, and what you make of school is what helps define you. Here are several of my activities, courses, and achievements throughout my 4 years at Centennial Secondary School:</p>
 				<br><br>
-				<div class="col-sm-4">
+				<div class="col-sm-4 education-up">
 					<div class="panel panel-default">
 						<div class="panel-heading panel-default text-center">
 							<span class="glyphicon glyphicon-flag"></span>
@@ -204,7 +138,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-4">
+				<div class="col-sm-4 education-up">
 					<div class="panel panel-default">
 						<div class="panel-heading panel-default text-center">
 							<span class="glyphicon glyphicon-education"></span>
@@ -223,7 +157,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-4">
+				<div class="col-sm-4 education-up">
 					<div class="panel panel-default">
 						<div class="panel-heading panel-default text-center">
 							<span class="glyphicon glyphicon-star"></span>
@@ -233,11 +167,15 @@
 							<ul>
 								<li>President's Scholarship of Distinction (University of Waterloo)</li>
 								<li>Top 25% (Canadian Computing Competition)</li>
+								<li>Award of Excellence (MCV4U)</li>
+								<li>Award of Excellence (MDM4U)</li>
+								<li>Award of Excellence (SPH4U)</li>
+								<li>Award of Excellence (SCH4U)</li>
 								<li>Award of Excellence (SPH3U)</li>
 								<li>Award of Excellence (TEJ3U)</li>
 								<li>Award of Excellence (SNC2DF)</li>
-								<li>Award of Excellence (TEJ2O)</li>
 								<li>Award of Excellence (TDJ2O)</li>
+								<li>Award of Excellence (TEJ2O)</li>
 							</ul>
 						</div>
 					</div>
@@ -247,69 +185,72 @@
 		<br/><br/>
 		
 		
-		<!-- Community -->
-		<!--<div class="container">
-			<section>
-				<div class="page-header text-center" id="community">
-					<h1>Community</h1>
-				</div>
-			</section>
-		</div>-->
-		
-		
 		<!-- Projects -->
 		<div class="container">
 			<section>
 				<div class="page-header text-center" id="project">
 					<h1>Projects</h1>
 				</div>
-				<p class="text-center">Nulla mauris tellus, euismod eget augue id, dictum rutrum libero. Duis pharetra dui at tellus ullamcorper, sit amet semper leo ultrices. Maecenas elementum velit et tortor efficitur posuere.</p>
+				<p class="text-center">In my spare time, I like to put my knowledge of programming languages, API’s, and computer science concepts to the test as I build real-world solutions to entertain people or solve problems in society. Have a look at a few personal projects I’ve built and try them out for yourself:</p>
 				<br><br>
-				<div class="col-sm-3 text-center">
+				<div class="col-sm-3 hovlight projects-down">
 					<div class="panel panel-default">
 						<div class="panel-body">
-							<h3>Paint Street Fighter 2</h3>
-							<img src="assets/images/comingsoon.png" class="img-responsive" alt="psf2">
+							<h3 class="text-center">Paint Street Fighter 2</h3>
+							<img style="border: 1px solid black;" src="assets/img/comingsoon.png" class="img-responsive center-block" alt="psf2">
 							<br/>
-							<p>Description coming soon.</p>
-							<a href="http://google.com" class="btn btn-default disabled">GitHub</a>
-							<a href="http://google.com" class="btn btn-primary disabled">Download</a>
+							<p class="text-center bold">C++/SFML</p>
+							<p>Single and double player retro streetfighter videogame featuring animated characters and backgrounds, >100000 player customizations, party mode, story mode, gameplay statistics, achievements, special abilities, AI, and more.</p>
+							<div class="text-center">
+								<a href="http://google.com" class="btn btn-default disabled">GitHub</a>
+								<a href="http://google.com" class="btn btn-primary disabled">Download</a>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-3 text-center">
+				<div class="col-sm-3 hovlight projects-up">
 					<div class="panel panel-default">
 						<div class="panel-body">
-							<h3>sfCipher</h3>
-							<img style="border: 1px solid black;" src="assets/images/sfCipherlogo.png" class="img-responsive" alt="sfcipher">
+							<h3 class="text-center">sfCipher</h3>
+							<img style="border: 1px solid black;" src="assets/img/sfCipherlogo.png" class="img-responsive center-block" alt="sfcipher">
 							<br/>
-							<p>Description coming soon.</p>
-							<a href="http://google.com" class="btn btn-default disabled">GitHub</a>
-							<a href="http://google.com" class="btn btn-primary disabled">Download</a>
+							<p class="text-center bold">C#/.NET</p>
+							<p>Steganography program that safely and securely hides secret messages in the pixel noise of images. Passwords are uncrackable and there are 3<sup>n</sup> possible messages when cracking pixel data (n being the message length).</p>
+							<div class="text-center">
+								<a href="http://google.com" class="btn btn-default disabled">GitHub</a>
+								<a href="http://google.com" class="btn btn-primary disabled">Download</a>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-3 text-center">
+				<div class="col-sm-3 hovlight projects-down">
 					<div class="panel panel-default">
 						<div class="panel-body">
-							<h3>qWikiSearch</h3>
-							<img style="border: 1px solid black;" src="assets/images/qWikiSearchlogo.png" class="img-responsive" alt="qwikisearch">
+							<h3 class="text-center">qWikiSearch</h3>
+							<img style="border: 1px solid black;" src="assets/img/qWikiSearchlogo.png" class="img-responsive center-block" alt="qwikisearch">
 							<br/>
-							<p>Description coming soon.</p>
-							<a href="http://google.com" class="btn btn-default disabled">GitHub</a>
-							<a href="http://google.com" class="btn btn-primary disabled">Download</a>
+							<p class="text-center bold">C#/.NET</p>
+							<p>Hack the North 2016 Project</p>
+							<p>Productivity application that extracts information from Wikipedia articles and displays only sentences containing a specific keyword or phrase; ideal for students when conducting research.</p>
+							<div class="text-center">
+								<a href="http://google.com" class="btn btn-default disabled">GitHub</a>
+								<a href="http://google.com" class="btn btn-primary disabled">Download</a>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-3 text-center">
+				<div class="col-sm-3 hovlight projects-up">
 					<div class="panel panel-default">
 						<div class="panel-body">
-							<h3>Paint Street Fighter</h3>
-							<img src="assets/images/PSF1logo.png" class="img-responsive" alt="psf">
+							<h3 class="text-center">Paint Street Fighter</h3>
+							<img src="assets/img/PSF1logo.png" class="img-responsive center-block" alt="psf">
 							<br/>
-							<p>Description coming soon.</p>
-							<a href="https://github.com/alipianu/PSF" class="btn btn-default">GitHub</a>
-							<a href="https://github.com/alipianu/PSF/archive/v1.1.zip" class="btn btn-primary">Download</a>
+							<p class="text-center bold">Turing</p>
+							<p>Two-player retro streetfighter videogame featuring animated characters, health bars, and soundtracks.</p>
+							<div class="text-center">
+								<a href="https://github.com/alipianu/PSF" class="btn btn-default">GitHub</a>
+								<a href="https://github.com/alipianu/PSF/archive/v1.1.zip" class="btn btn-primary">Download</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -324,57 +265,49 @@
 				<div class="page-header text-center" id="hackathon">
 					<h1>Hackathons</h1>
 				</div>
-				<p class="text-center">Nulla mauris tellus, euismod eget augue id, dictum rutrum libero. Duis pharetra dui at tellus ullamcorper, sit amet semper leo ultrices. Maecenas elementum velit et tortor efficitur posuere.</p>
+				<p class="text-center">Hackathons are my favourite types of events. I love competing in them as I meet new people, discover new opportunities, dabble with new languages and technologies, and work in tightly-knit teams. Here are my previous hackathons:</p>
 				<br/>
 				<div class="rows">
-					<div class="col-xs-6">
-						<a href="https://2016.hackthenorth.com/"><img src="assets/images/htn.png" class="img-responsive pull-right" alt="htn"></a>
+					<div class="col-xs-6 hovgrow hackathons-left">
+						<a href="https://2016.hackthenorth.com/"><img src="assets/img/htn.png" class="img-responsive pull-right" alt="htn"></a>
 					</div>
 				</div>
 				<div class="rows">
-					<div class="col-xs-6">
-						<a href="https://masseyhacks.ca/"><img src="assets/images/mh.png" class="img-responsive" alt="mh"></a>
-					</div>
-				</div>
-			</section>
-		</div><br/>
-		
-		
-		<!-- Contact -->
-		<div class="container">
-			<section>
-				<div class="page-header text-center" id="contact">
-					<h1>Contact</h1>
-				</div>
-				<p class="text-center">Nulla mauris tellus, euismod eget augue id, dictum rutrum libero. Duis pharetra dui at tellus ullamcorper, sit amet semper leo ultrices. Maecenas elementum velit et tortor efficitur posuere.</p>
-				<br>
-				<div class="rows">
-					<div class="col-sm-3 col-sm-offset-3">
-						<input type="text" class="form-control" placeholder="Name">
-					</div>
-					<div class="col-sm-3">
-						<input type="text" class="form-control" placeholder="Email Address">
-					</div>
-				</div>
-				<div class="rows">
-					<div class="col-sm-6 col-sm-offset-3">
-						<input type="text" class="form-control" placeholder="Message">
-					</div>
-				</div>
-				<div class="rows">
-					<div class="col-lg-12 text-center">
-						<a href="http://google.com" class="btn btn-primary text-center disabled">Send</a>
+					<div class="col-xs-6 hovgrow hackathons-right">
+						<a href="https://masseyhacks.ca/"><img src="assets/img/mh.png" class="img-responsive" alt="mh"></a>
 					</div>
 				</div>
 			</section>
 		</div>
-		<br/><br/>
-		
-		
+		<br/></br>
 		
 	
+		<!-- ScrollReveal library for animations -->
+		<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+		<!-- Latest jQuery library -->
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		
+		<footer>
+			<h4 class="text-center">Alex Lipianu Copyright &copy; 2017</h4>
+		</footer>
+	
+		<script>
+			window.sr = ScrollReveal();
+			sr.reveal('.jumbo-up', {duration: 2000, origin: 'bottom', distance: '100px'});
+			sr.reveal('.about-left', {duration: 2000, origin: 'left'});
+			sr.reveal('.about-right', {duration: 2000, origin: 'right'});
+			sr.reveal('.interests-down', {duration: 2000, origin: 'top'});
+			sr.reveal('.education-up', {duration: 2000, origin: 'bottom'});
+			sr.reveal('.projects-up', {duration: 2000, origin: 'bottom'});
+			sr.reveal('.projects-down', {duration: 2000, origin: 'top'});
+			sr.reveal('.hackathons-left', {duration: 2000, origin: 'left'});
+			sr.reveal('.hackathons-right', {duration: 2000, origin: 'right'});
+			
+			$(".scrollto").click(function () {
+				if ($("#btn-collapse").css('display')!='none')$("#btn-collapse").click();
+			});
+		</script>
 	</body>
 </html>
