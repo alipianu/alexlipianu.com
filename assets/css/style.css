@@ -73,6 +73,9 @@ section {
 	padding-left: 40px;
 	white-space: nowrap;
 	margin: 0 auto;
+}
+
+.type {
 	animation: 
     	typing 3s steps(40, end),
     	blink-caret .75s step-end infinite;

@@ -18,12 +18,13 @@ $(window).on("load", function () {
         adjacent = stillAdjacent;
     });
 
-    $(function () {
-        $(window).scroll(function () {
-            var currentScrollTop = $(window).scrollTop();
-            $('#darkfade').css('opacity', currentScrollTop / ($('#darkfade').height() - 25));
-
-        });
+    $(window).scroll(function () {
+        var currentScrollTop = $(window).scrollTop();
+        var fadeopacity = currentScrollTop / ($('#darkfade').height() - 25);
+        $('#darkfade').css('opacity', fadeopacity);
+        if (fadeopacity > 0.144 && $('#phrase').hasClass('type') == false) {
+            $('#phrase').addClass('type');
+        }
     });
 
     $('.hitbox').on('click', function () {
