@@ -1,90 +1,159 @@
-.navbar-fixed-top {
-	min-height: 80px;
-}
-
-.navbar {
-	margin-bottom: -5px;
-}
-
-.navbar-brand {
-	padding: 15px;
-	height: 80px;
-	line-height: 80px;
-	margin-left: 30px;
-}
-
-.navbar-toggle {
-	margin-top: 20px;
-	margin-right: 30px;
-}
-
-.navbar-nav > li > a {
-	padding-top: 0px;
-	padding-bottom: 0px;
-	line-height: 80px;
-}
-
-.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
-    color: peru;
-}
-
-.nav a {
-	color: white;
-	font-size: 1.4em;
-}
-
-@media (max-width: 767px) {
-	.navbar-nav > li > a {
-		line-height: 20px;
-		padding-top: 0px;
-		padding-bottom: 0px;
-		margin-top: 10px;
-		margin-bottom: 10px;
-	}
-}
-
-.jumbotron {
-	padding-top: 110px;
-	color: white;
-	background-image: url(../img/wood.jpg);
+.splash {
+	min-height: 100vh;
 	text-align: center;
-	background-repeat: no-repeat;
-	min-height: 484px;
+	background-image: url(../img/bluecity2.jpg);
+	color: #FFF;
 	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 0% 25%;
+	text-shadow: black 0.3em 0.3em 0.3em;
+	background-attachment: fixed;
 }
 
-.container {
-	margin-bottom: 50px;
+.splash span {
+	position: fixed;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+
+#darkfade {
+	background:#262626;
+	opacity:0;
+	position:absolute;
+	top:0;
+	width:100%;
+	height:100%;
 }
 
 #name {
 	font-size: 70px;
+	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+section {
+	padding-top: 50px;
+	padding-bottom: 100px;
+	z-index: 2;
+	position: relative;
+}
+
+#about, #projects h1, #projects .description, .project:hover h3 {
+	color: #FFF;
+}
+
+#projects .description p, #experience .description p, .hitbox, .project .card-header, .card-body div {
+	text-align: center;
+}
+
+#about .description {
+	padding: 40px;
+}
+
+#about .col-md-8 {
+	padding-left: 20px;
+}
+
+#about, #projects {
+	background: #262626;
+}
+
+#headshot {
+	margin-top:40px;
 }
 
 #phrase {
-	color: peru;
+	color: #17A2B8;
+	overflow: hidden;
+	border-right: .15em solid #17A2B8;
+	float: left;
+	width: 285px;
+	padding-left: 40px;
+	white-space: nowrap;
+	margin: 0 auto;
+	animation: 
+    	typing 3s steps(40, end),
+    	blink-caret .75s step-end infinite;
 }
 
-.hovlight:hover h3 {
-	color: peru;
+p a, p a:hover, .hovlight:hover h3 {
+	color: #17A2B8;
 }
 
-img {
-	transition: all 1.0s;
+#experience {
+	background: #FFF;
 }
 
-.hovgrow:hover img {
-	transform: scale(1.2);
-	padding-bottom: 10px;
+#experience h1, #projects h1 {
+	margin-bottom: 40px;
+}
+
+#experience hr {
+	border-color:#FFF;
+}
+
+.hovgrow:hover i {
+	animation: growtext .5s ease-in-out 0s 1 alternate forwards running;
+}
+
+.grow i {
+	transform: scale(1.1);
+}
+
+.exp {
+	padding-top: 30px;
+}
+
+.align-hidden {
+	margin-top:30px;
+	margin-bottom:30px;
+}
+
+.exp-icon img {
+	background: #262626;
+	border-radius: 50%;
+	border: 10px solid #262626;
+	transform: rotate(45deg);
+}
+
+.exp-icon {
+	border-radius: 50%;
+	margin: 20px;
+	transform: rotate(-45deg);
+}
+
+.exp-25 {
+	border-right: 10px solid #FFF;
+	border-top: 10px solid transparent;
+	border-left: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+}
+
+.exp-50 {
+	border-right: 10px solid #FFF;
+	border-top: 10px solid transparent;
+	border-left: 10px solid transparent;
+	border-bottom: 10px solid #FFF;
+}
+
+.exp-75 {
+	border-right: 10px solid #FFF;
+	border-top: 10px solid transparent;
+	border-left: 10px solid #FFF;
+	border-bottom: 10px solid #FFF;
+}
+
+.exp-100 {
+	border: 10px solid #FFF;
 }
 
 h1 {
 	font-family: "Arial Black", Gadget, sans-serif;
 	font-size: 45px;
+	text-align: center;
 }
 
 h2 {
-	font-family: "Arial Black", Gadget, sans-serif;
+	font-family: 'Poiret One', cursive;
 	font-size: 32px;
 }
 
@@ -93,37 +162,144 @@ h3 {
 	font-size: 24px;
 }
 
-h4 {
-	font-family: "Arial Black", Gadget, sans-serif;
-	font-size: 20px;
-}
-
 p, li {
-	font-family: Tahoma, Geneva, sans-serif;
+	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 }
 
-.bold {
-	font-weight: bold;
+.project:hover .card-header {
+	animation: background-fade .5s ease-in-out 0s 1 alternate forwards running;
 }
 
-.border {
-	border: 1px solid black;
+.project:hover {
+	animation: border-fade .5s ease-in-out 0s 1 alternate forwards running;
 }
 
-.panel > .panel-heading {
-	background-image: none;
-	background-color: peru;
-	color: white;
-}
-	
-.vcenter {
-	display: inline-block;
-	vertical-align: middle;
-	float: none;
-}
-
-footer {
+.project {
 	margin-top: 40px;
-	margin-bottom: 20px;
+}
+
+button {
+	margin-top: 10px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+button img {
+	max-height: 25px;
+	max-width: 25px;
+	margin-left: 5px;
+	margin-bottom: 5px;
+}
+
+.footer {
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.footer div {
+	background: #17A2B8;
+	padding: 10px;
+	color: #FFF;
+	position: relative;
+	text-align: center;
+}
+
+.footer hr {
+	border-color: #262626;
+}
+
+.contact li {
+	background: #FFF;
+	border-radius: 50%;
+	display: inline-block;
+	padding: 0;
+	margin: 10px;
+	line-height: 60px;
+	width: 60px;
+	height: 60px;
+}
+
+.contact li a {
+	color:#17A2B8;
+	font-size: 35px;
+}
+
+.contact li:hover {
+	animation: fade-dark .5s ease-in-out 0s 1 alternate forwards running;
+}
+
+.contact li:hover a {
+	color:#FFF;
+}
+
+#endtag {
+	margin-bottom: 5px;
+}
+
+.colfade {
+	background: #FFF;
+	animation: transcolor .5s ease-in-out 0s 1 alternate forwards running;
+}
+
+@media screen and (max-width: 768px) {
+	#name {
+		font-size:16vw;
+	}
+	#title {
+		font-size: 8vw;
+	}
+	.splash span {
+		white-space:wrap;
+	}
+}
+@media screen and (min-width: 768px) {
+	#name {
+		font-size:8vw;
+	}
+	#title {
+		font-size:4vw;
+	}
+	.splash span {
+		white-space:nowrap;
+	}
+}
+@media screen and (max-width: 992px) {
+	.exp {
+		font-size: 200px;
+	}
+}
+@media screen and (min-width: 992px) {
+	.exp {
+		font-size: 12vw;
+	}
+}
+
+@keyframes background-fade {
+	to { background: #17A2B8; }
+}
+@keyframes border-fade {
+	to { border-color: #17A2B8; }
+}
+@keyframes growtext {
+	to { transform: scale(1.1); }
+}
+@keyframes fade-dark {
+	to { background: #262626; }
+}
+@keyframes transcolor {
+	from { background: #FFF; }
+	to { background: #17A2B8;
+		 color: white; }
+}
+@keyframes typing {
+	from { width: 0 }
+	to { width: 285px }
+}
+@keyframes blink-caret {
+	from, to { border-color: transparent }
+	50% { border-color: #17A2B8 }
 }
