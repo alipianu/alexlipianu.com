@@ -114,39 +114,12 @@ p a, p a:hover, .hovlight:hover h3 {
 .exp-icon img {
 	background: #262626;
 	border-radius: 50%;
-	border: 10px solid #262626;
 	transform: rotate(45deg);
 }
 
 .exp-icon {
 	border-radius: 50%;
-	margin: 20px;
 	transform: rotate(-45deg);
-}
-
-.exp-25 {
-	border-right: 10px solid #FFF;
-	border-top: 10px solid transparent;
-	border-left: 10px solid transparent;
-	border-bottom: 10px solid transparent;
-}
-
-.exp-50 {
-	border-right: 10px solid #FFF;
-	border-top: 10px solid transparent;
-	border-left: 10px solid transparent;
-	border-bottom: 10px solid #FFF;
-}
-
-.exp-75 {
-	border-right: 10px solid #FFF;
-	border-top: 10px solid transparent;
-	border-left: 10px solid #FFF;
-	border-bottom: 10px solid #FFF;
-}
-
-.exp-100 {
-	border: 10px solid #FFF;
 }
 
 h1 {
@@ -279,6 +252,144 @@ button img {
 @media screen and (min-width: 992px) {
 	.exp {
 		font-size: 12vw;
+	}
+}
+@media screen and (min-width: 549px) {
+	.exp-icon img {
+		border: 10px solid #262626;
+	}
+	
+	.exp-icon {
+		margin: 20px;
+	}
+	
+	.exp-25 {
+		border-right: 10px solid #FFF;
+		border-top: 10px solid transparent;
+		border-left: 10px solid transparent;
+		border-bottom: 10px solid transparent;
+	}
+	
+	.exp-50 {
+		border-right: 10px solid #FFF;
+		border-top: 10px solid transparent;
+		border-left: 10px solid transparent;
+		border-bottom: 10px solid #FFF;
+	}
+	
+	.exp-75 {
+		border-right: 10px solid #FFF;
+		border-top: 10px solid transparent;
+		border-left: 10px solid #FFF;
+		border-bottom: 10px solid #FFF;
+	}
+	
+	.exp-100 {
+		border: 10px solid #FFF;
+	}
+}
+@media screen and (min-width: 400px) and (max-width: 549px) {
+	.exp-icon img {
+		border: 5px solid #262626;
+	}
+	
+	.exp-icon {
+		margin: 10px;
+	}
+	
+	.exp-25 {
+		border-right: 5px solid #FFF;
+		border-top: 5px solid transparent;
+		border-left: 5px solid transparent;
+		border-bottom: 5px solid transparent;
+	}
+	
+	.exp-50 {
+		border-right: 5px solid #FFF;
+		border-top: 5px solid transparent;
+		border-left: 5px solid transparent;
+		border-bottom: 5px solid #FFF;
+	}
+	
+	.exp-75 {
+		border-right: 5px solid #FFF;
+		border-top: 5px solid transparent;
+		border-left: 5px solid #FFF;
+		border-bottom: 5px solid #FFF;
+	}
+	
+	.exp-100 {
+		border: 5px solid #FFF;
+	}
+}
+
+@media screen and (min-width: 350px) and (max-width: 400px) {
+	.exp-icon img {
+		border: 5px solid #262626;
+	}
+	
+	.exp-icon {
+		margin: 5px;
+	}
+	
+	.exp-25 {
+		border-right: 5px solid #FFF;
+		border-top: 5px solid transparent;
+		border-left: 5px solid transparent;
+		border-bottom: 5px solid transparent;
+	}
+	
+	.exp-50 {
+		border-right: 5px solid #FFF;
+		border-top: 5px solid transparent;
+		border-left: 5px solid transparent;
+		border-bottom: 5px solid #FFF;
+	}
+	
+	.exp-75 {
+		border-right: 5px solid #FFF;
+		border-top: 5px solid transparent;
+		border-left: 5px solid #FFF;
+		border-bottom: 5px solid #FFF;
+	}
+	
+	.exp-100 {
+		border: 5px solid #FFF;
+	}
+}
+
+@media screen and (max-width: 350px) {
+	.exp-icon img {
+		border: 3px solid #262626;
+	}
+	
+	.exp-icon {
+		margin: 0;
+	}
+	
+	.exp-25 {
+		border-right: 3px solid #FFF;
+		border-top: 3px solid transparent;
+		border-left: 3px solid transparent;
+		border-bottom: 3px solid transparent;
+	}
+	
+	.exp-50 {
+		border-right: 3px solid #FFF;
+		border-top: 3px solid transparent;
+		border-left: 3px solid transparent;
+		border-bottom: 3px solid #FFF;
+	}
+	
+	.exp-75 {
+		border-right: 3px solid #FFF;
+		border-top: 3px solid transparent;
+		border-left: 3px solid #FFF;
+		border-bottom: 3px solid #FFF;
+	}
+	
+	.exp-100 {
+		border: 3px solid #FFF;
 	}
 }
 
