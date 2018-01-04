@@ -30,11 +30,14 @@
 	font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
+#front {
+	z-index: 2;
+	position: relative;
+}
+
 section {
 	padding-top: 50px;
 	padding-bottom: 100px;
-	z-index: 2;
-	position: relative;
 }
 
 #about, #projects h1, #projects .description, .project:hover h3 {
@@ -221,6 +224,7 @@ button img {
 	line-height: 60px;
 	width: 60px;
 	height: 60px;
+	transform: translateX(-20px);
 }
 
 .contact li a {
