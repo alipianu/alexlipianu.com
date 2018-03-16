@@ -189,14 +189,18 @@ button img {
 
 .footer hr {
 	border-color: #262626;
+	margin-bottom: 14px;
 }
+
 
 .contact li {
 	background: #FFF;
 	border-radius: 50%;
 	display: inline-block;
 	padding: 0;
-	margin: 10px;
+	margin-top: 4px;
+	margin-left: 20px;
+	margin-right: 20px;
 	line-height: 60px;
 	width: 60px;
 	height: 60px;
