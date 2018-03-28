@@ -1,4 +1,4 @@
-$(window).scroll(function () {
+$(window).on('scroll', function() {
     var currentScrollTop = $(window).scrollTop();
     var fadeopacity = currentScrollTop / ($('#darkfade').height() - 25);
     $('#darkfade').css('opacity', fadeopacity);
@@ -6,6 +6,7 @@ $(window).scroll(function () {
         $('#phrase').addClass('type');
     }
 });
+
 
 $(window).on("load", function () {
     var adjacent = $("#test")['0'].getBoundingClientRect().top == $("#game")['0'].getBoundingClientRect().top;
@@ -16,12 +17,12 @@ $(window).on("load", function () {
         if (adjacent && !stillAdjacent && opened != false) {
             // pc -> mobile
             $('#' + opened + '-drop-row').css('display', 'none');
-            $('#' + opened + '-drop').css('display', 'initial');
+            $('#' + opened + '-drop').css('display', '');
             $('#' + opened + '-fade-row').toggleClass('colfade');
         } else if (!adjacent && stillAdjacent && opened != false) {
             // mobile -> pc
             $('#' + opened + '-drop').css('display', 'none');
-            $('#' + opened + '-drop-row').css('display', 'initial');
+            $('#' + opened + '-drop-row').css('display', '');
             $('#' + opened + '-fade-row').toggleClass('colfade');
         }
         adjacent = stillAdjacent;
@@ -49,7 +50,7 @@ $(window).on("load", function () {
         } else {
             if (opened != false)
                 $('#' + opened + idSuffix).css('display', 'none');
-            $(item).css('display', 'initial');
+            $(item).css('display', '');
             opened = $(target).attr('id');
         }
     }
