@@ -1,19 +1,20 @@
 .splash {
 	min-height: 100vh;
-	text-align: center;
 	background-image: url(../img/bluecity.jpg);
-	color: #FFF;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: 0% 25%;
-	text-shadow: black 0.3em 0.3em 0.3em;
 	background-attachment: fixed;
 }
 
-.splash span {
+.splash table {
+	text-shadow: black 0.3em 0.3em 0.3em;
+	color: #FFF;
+	text-align: center;
+	width: 100%;
 	position: fixed;
 	top: 50%;
-	transform: translate(-50%,-50%);
+	transform: translate(0,-50%);
 }
 
 #darkfade {
@@ -99,6 +100,14 @@ p a, p a:hover, .hovlight:hover h3 {
 
 .hovgrow:hover i {
 	animation: growtext .5s ease-in-out 0s 1 alternate forwards running;
+	-ms-animation-name:growtext;
+	-ms-animation-duration:.5s;
+	-ms-animation-timing-function:ease-in-out;
+	-ms-animation-delay:0s;
+	-ms-animation-iteration-count:1;
+	-ms-animation-direction:alternate;
+	-ms-animation-fill-mode:forwards;
+	-ms-animation-play-state:running;
 }
 
 .grow i {
@@ -146,12 +155,32 @@ p, li {
 	font-size: 16px;
 }
 
+.card {
+	display: block;
+}
+
 .project:hover .card-header {
 	animation: background-fade .5s ease-in-out 0s 1 alternate forwards running;
+	-ms-animation-name:background-fade;
+	-ms-animation-duration:.5s;
+	-ms-animation-timing-function:ease-in-out;
+	-ms-animation-delay:0s;
+	-ms-animation-iteration-count:1;
+	-ms-animation-direction:alternate;
+	-ms-animation-fill-mode:forwards;
+	-ms-animation-play-state:running;
 }
 
 .project:hover {
 	animation: border-fade .5s ease-in-out 0s 1 alternate forwards running;
+	-ms-animation-name:border-fade;
+	-ms-animation-duration:.5s;
+	-ms-animation-timing-function:ease-in-out;
+	-ms-animation-delay:0s;
+	-ms-animation-iteration-count:1;
+	-ms-animation-direction:alternate;
+	-ms-animation-fill-mode:forwards;
+	-ms-animation-play-state:running;
 }
 
 .project {
@@ -214,6 +243,14 @@ button img {
 
 .contact li:hover {
 	animation: fade-dark .5s ease-in-out 0s 1 alternate forwards running;
+	-ms-animation-name:fade-dark;
+	-ms-animation-duration:.5s;
+	-ms-animation-timing-function:ease-in-out;
+	-ms-animation-delay:0s;
+	-ms-animation-iteration-count:1;
+	-ms-animation-direction:alternate;
+	-ms-animation-fill-mode:forwards;
+	-ms-animation-play-state:running;
 }
 
 .contact li:hover a {
@@ -227,6 +264,14 @@ button img {
 .colfade {
 	background: #FFF;
 	animation: transcolor .5s ease-in-out 0s 1 alternate forwards running;
+	-ms-animation-name:transcolor;
+	-ms-animation-duration:.5s;
+	-ms-animation-timing-function:ease-in-out;
+	-ms-animation-delay:0s;
+	-ms-animation-iteration-count:1;
+	-ms-animation-direction:alternate;
+	-ms-animation-fill-mode:forwards;
+	-ms-animation-play-state:running;
 }
 
 @media screen and (max-width: 768px) {
@@ -329,7 +374,6 @@ button img {
 		border: 5px solid #FFF;
 	}
 }
-
 @media screen and (min-width: 350px) and (max-width: 400px) {
 	.exp-icon img {
 		border: 5px solid #262626;
@@ -364,7 +408,6 @@ button img {
 		border: 5px solid #FFF;
 	}
 }
-
 @media screen and (max-width: 350px) {
 	.exp-icon img {
 		border: 3px solid #262626;
