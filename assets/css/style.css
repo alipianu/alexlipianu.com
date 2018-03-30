@@ -15,6 +15,7 @@
 	position: fixed;
 	top: 50%;
 	transform: translate(0,-50%);
+	cursor: default;
 }
 
 #darkfade {
@@ -96,6 +97,10 @@ p a, p a:hover, .hovlight:hover h3 {
 
 #experience hr {
 	border-color:#FFF;
+}
+
+.hitbox, button {
+	cursor: pointer;
 }
 
 .hovgrow:hover i {
@@ -187,17 +192,48 @@ p, li {
 	margin-top: 40px;
 }
 
+.tools {
+	padding: 0px;
+	color: #FFF;
+	text-align: center;
+	cursor: default;
+}
+
+.tools li {
+	display: inline-block;
+	border-style: solid;
+	border-width: 1.5px;
+	padding-left: 8px;
+	padding-right: 8px;
+	margin-right: 5px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+}
+
+.tools .language {
+	background: #03A9F4;
+	border-color: #015a83;
+}
+
+.tools .framework {
+	background: #4CAF50;
+	border-color: #285c29;
+}
+
+.tools .library {
+	background: #FF9800;
+	border-color: #814e00;
+}
+
+.tools .platform {
+	background: #9C27B0;
+	border-color: #54155f;
+}
+
 button {
 	margin-top: 10px;
 	margin-left: 5px;
 	margin-right: 5px;
-}
-
-button img {
-	max-height: 25px;
-	max-width: 25px;
-	margin-left: 5px;
-	margin-bottom: 5px;
 }
 
 .footer {
@@ -208,7 +244,7 @@ button img {
 	text-align: center;
 }
 
-.footer div {
+.footer #connect {
 	background: #17A2B8;
 	padding: 10px;
 	color: #FFF;
@@ -216,11 +252,21 @@ button img {
 	text-align: center;
 }
 
-.footer hr {
-	border-color: #262626;
-	margin-bottom: 14px;
+.footer #endtag {
+	background: #262626;
+	padding: 10px;
+	color: #FFF;
+	position: relative;
+	text-align: center;
 }
 
+#endtag p {
+	margin: 0px;
+}
+
+.contact {
+	margin-bottom: 3px;
+}
 
 .contact li {
 	background: #FFF;
@@ -255,10 +301,6 @@ button img {
 
 .contact li:hover a {
 	color:#FFF;
-}
-
-#endtag {
-	margin-bottom: 5px;
 }
 
 .colfade {
