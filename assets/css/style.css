@@ -53,11 +53,7 @@ section {
 }
 
 #about .description {
-	padding: 40px;
-}
-
-#about .col-md-8 {
-	padding-left: 20px;
+	padding-top: 40px;
 }
 
 #about, #projects {
@@ -73,8 +69,7 @@ section {
 	overflow: hidden;
 	border-right: .15em solid #17A2B8;
 	float: left;
-	width: 285px;
-	padding-left: 40px;
+	width: 247px;
 	white-space: nowrap;
 	margin: 0 auto;
 }
@@ -506,7 +501,7 @@ button {
 }
 @keyframes typing {
 	from { width: 0 }
-	to { width: 285px }
+	to { width: 247px; }
 }
 @keyframes blink-caret {
 	from, to { border-color: transparent }
