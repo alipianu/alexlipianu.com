@@ -44,7 +44,7 @@ section {
 	padding-bottom: 100px;
 }
 
-#about, #projects h1, #projects .description, .project:hover h3 {
+#about, #projects h2, #projects .description, .project:hover h5 {
 	color: #FFF;
 }
 
@@ -80,7 +80,7 @@ section {
     	blink-caret .75s step-end infinite;
 }
 
-p a, p a:hover, .hovlight:hover h3 {
+p a, p a:hover, .hovlight:hover h5 {
 	color: #17A2B8;
 }
 
@@ -88,7 +88,7 @@ p a, p a:hover, .hovlight:hover h3 {
 	background: #FFF;
 }
 
-#experience h1, #projects h1 {
+#experience h2, #projects h2 {
 	margin-bottom: 40px;
 }
 
@@ -101,15 +101,22 @@ p a, p a:hover, .hovlight:hover h3 {
 }
 
 .hovgrow:hover i {
-	animation: growtext .5s ease-in-out 0s 1 alternate forwards running;
-	-ms-animation-name:growtext;
-	-ms-animation-duration:.5s;
-	-ms-animation-timing-function:ease-in-out;
-	-ms-animation-delay:0s;
-	-ms-animation-iteration-count:1;
-	-ms-animation-direction:alternate;
-	-ms-animation-fill-mode:forwards;
-	-ms-animation-play-state:running;
+	animation-name: growtext;
+	animation-duration: .5s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;
+	animation-play-state: running;
+	-ms-animation-name: growtext;
+	-ms-animation-duration: .5s;
+	-ms-animation-timing-function: ease-in-out;
+	-ms-animation-delay: 0s;
+	-ms-animation-iteration-count: 1;
+	-ms-animation-direction: alternate;
+	-ms-animation-fill-mode: forwards;
+	-ms-animation-play-state: running;
 }
 
 .grow i {
@@ -136,18 +143,18 @@ p a, p a:hover, .hovlight:hover h3 {
 	transform: rotate(-45deg);
 }
 
-h1 {
+h2 {
 	font-family: "Arial Black", Gadget, sans-serif;
 	font-size: 45px;
 	text-align: center;
 }
 
-h2 {
+h4 {
 	font-family: 'Poiret One', cursive;
 	font-size: 32px;
 }
 
-h3 {
+h5 {
 	font-family: "Arial Black", Gadget, sans-serif;
 	font-size: 24px;
 }
@@ -162,27 +169,41 @@ p, li {
 }
 
 .project:hover .card-header {
-	animation: background-fade .5s ease-in-out 0s 1 alternate forwards running;
-	-ms-animation-name:background-fade;
-	-ms-animation-duration:.5s;
-	-ms-animation-timing-function:ease-in-out;
-	-ms-animation-delay:0s;
-	-ms-animation-iteration-count:1;
-	-ms-animation-direction:alternate;
-	-ms-animation-fill-mode:forwards;
-	-ms-animation-play-state:running;
+	animation-name: background-fade;
+	animation-duration: .5s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;
+	animation-play-state: running;
+	-ms-animation-name: background-fade;
+	-ms-animation-duration: .5s;
+	-ms-animation-timing-function: ease-in-out;
+	-ms-animation-delay: 0s;
+	-ms-animation-iteration-count: 1;
+	-ms-animation-direction: alternate;
+	-ms-animation-fill-mode: forwards;
+	-ms-animation-play-state: running;
 }
 
 .project:hover {
-	animation: border-fade .5s ease-in-out 0s 1 alternate forwards running;
-	-ms-animation-name:border-fade;
-	-ms-animation-duration:.5s;
-	-ms-animation-timing-function:ease-in-out;
-	-ms-animation-delay:0s;
-	-ms-animation-iteration-count:1;
-	-ms-animation-direction:alternate;
-	-ms-animation-fill-mode:forwards;
-	-ms-animation-play-state:running;
+	animation-name: border-fade;
+	animation-duration: .5s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;
+	animation-play-state: running;
+	-ms-animation-name: border-fade;
+	-ms-animation-duration: .5s;
+	-ms-animation-timing-function: ease-in-out;
+	-ms-animation-delay: 0s;
+	-ms-animation-iteration-count: 1;
+	-ms-animation-direction: alternate;
+	-ms-animation-fill-mode: forwards;
+	-ms-animation-play-state: running;
 }
 
 .project {
@@ -285,15 +306,22 @@ button {
 }
 
 .contact li:hover {
-	animation: fade-dark .5s ease-in-out 0s 1 alternate forwards running;
-	-ms-animation-name:fade-dark;
-	-ms-animation-duration:.5s;
-	-ms-animation-timing-function:ease-in-out;
-	-ms-animation-delay:0s;
-	-ms-animation-iteration-count:1;
-	-ms-animation-direction:alternate;
-	-ms-animation-fill-mode:forwards;
-	-ms-animation-play-state:running;
+	animation-name: fade-dark;
+	animation-duration: .5s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;
+	animation-play-state: running;
+	-ms-animation-name: fade-dark;
+	-ms-animation-duration: .5s;
+	-ms-animation-timing-function: ease-in-out;
+	-ms-animation-delay: 0s;
+	-ms-animation-iteration-count: 1;
+	-ms-animation-direction: alternate;
+	-ms-animation-fill-mode: forwards;
+	-ms-animation-play-state: running;
 }
 
 .contact li:hover a {
@@ -302,15 +330,22 @@ button {
 
 .colfade {
 	background: #FFF;
-	animation: transcolor .5s ease-in-out 0s 1 alternate forwards running;
-	-ms-animation-name:transcolor;
-	-ms-animation-duration:.5s;
-	-ms-animation-timing-function:ease-in-out;
-	-ms-animation-delay:0s;
-	-ms-animation-iteration-count:1;
-	-ms-animation-direction:alternate;
-	-ms-animation-fill-mode:forwards;
-	-ms-animation-play-state:running;
+	animation-name: transcolor;
+	animation-duration: .5s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-direction: alternate;
+	animation-fill-mode: forwards;
+	animation-play-state: running;
+	-ms-animation-name: transcolor;
+	-ms-animation-duration: .5s;
+	-ms-animation-timing-function: ease-in-out;
+	-ms-animation-delay: 0s;
+	-ms-animation-iteration-count: 1;
+	-ms-animation-direction: alternate;
+	-ms-animation-fill-mode: forwards;
+	-ms-animation-play-state: running;
 }
 
 @media screen and (max-width: 768px) {
