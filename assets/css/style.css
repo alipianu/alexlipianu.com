@@ -264,7 +264,8 @@ button {
 
 .footer #connect {
 	background: #17A2B8;
-	padding: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	color: #FFF;
 	position: relative;
 	text-align: center;
@@ -292,8 +293,6 @@ button {
 	display: inline-block;
 	padding: 0;
 	margin-top: 4px;
-	margin-left: 20px;
-	margin-right: 20px;
 	line-height: 60px;
 	width: 60px;
 	height: 60px;
@@ -514,6 +513,20 @@ button {
 	
 	.exp-100 {
 		border: 3px solid #FFF;
+	}
+}
+
+@media screen and (min-width:476px) {
+	.contact li {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+}
+
+@media screen and (max-width:475px) {
+	.contact li {
+		margin-left: 0px;
+		margin-right: 0px;
 	}
 }
 
