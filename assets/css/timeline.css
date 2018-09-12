@@ -1,0 +1,249 @@
+#timeline ul {
+	list-style-type: none;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+  
+#timeline li {
+	position: relative;
+	display: inline-block;
+	width: 20%;
+}
+  
+#timeline table {
+	position: relative;
+	display: inline-table;
+	width: 100%;
+	height: 100%;
+	border-collapse: collapse;
+}
+  
+#timeline .ribbon-left {
+	float: left;
+	border-top: 20px solid transparent;
+	border-left: 15px solid white;
+	border-bottom: 20px solid transparent;
+}
+  
+#timeline th {
+	padding: 0px;
+}
+  
+#timeline th.timeline-entry {
+	font-size: 20px;
+	color: white;
+}
+  
+#timeline th.timeline-entry:hover {
+	text-shadow:
+	  -1px -1px 0 #000,
+	  1px -1px 0 #000,
+	  -1px 1px 0 #000,
+	  1px 1px 0 #000,
+	  -1px -1px 0 #000,
+	  1px -1px 0 #000,
+	  -1px 1px 0 #000,
+	  1px 1px 0 #000; 
+}
+  
+#timeline th.timeline-entry:before {
+	content: '';
+	position: absolute;
+	width: 2px;
+	height: 30px;
+	background-color: black;
+	transform: translate(4px, 22px);
+	display: none;
+}
+  
+#timeline th.timeline-entry:hover:before {
+	display: inline-block;
+}
+  
+#timeline th.timeline-entry:after {
+	position: absolute;
+	font-size: 15px;
+	color: white;
+	border: 2px solid black;
+	padding: 10px;
+	display:none;
+	width: 250px;
+	transform: translate(-130px, 50px);
+}
+  
+#timeline th.timeline-entry:hover:after {
+	text-shadow: none;
+	display:inline-block;
+}
+  
+#timeline .timeline-date {
+	margin-bottom: 10px;
+	font-family: 'Kosugi Maru', sans-serif;
+	font-size: 25px;
+}
+  
+#timeline .ribbon-right {
+	float: right;
+	border-top: 20px solid white;
+	border-left: 15px solid transparent;
+	border-bottom: 20px solid white;
+}
+  
+/* color individual ribbons */
+#timeline li:nth-child(1) > table tr {
+	background-color: darkorange;
+}
+  
+#timeline li:nth-child(2) > table tr {
+	background-color: darkcyan;
+}
+  
+#timeline li:nth-child(3) > table tr {
+	background-color: darkorchid;
+}
+  
+#timeline li:nth-child(4) > table tr {
+	background-color: darkslateblue;
+}
+  
+/* add content to each timeline entry */
+  
+#timeline li:nth-child(1) th.timeline-entry:after {
+	content: 'Developed and released Paint Street Fighter';
+	background-color: darkorange;
+}
+  
+#timeline li:nth-child(2) th.timeline-entry:after {
+	content: 'Software Developer at InFlight Corporation';
+	background-color: darkcyan;
+}
+  
+#timeline li:nth-child(3) th.timeline-entry:nth-child(2):after {
+	content: 'Launched personal website';
+	background-color: darkorchid;
+}
+  
+#timeline li:nth-child(3) th.timeline-entry:nth-child(3):after {
+	content: 'Software Developer in Test at InFlight Corporation';
+	background-color: darkorchid;
+}
+  
+#timeline li:nth-child(3) th.timeline-entry:nth-child(4):after {
+	content: 'Developed and released Imgrypt';
+	background-color: darkorchid;
+}
+  
+#timeline li:nth-child(3) th.timeline-entry:nth-child(5):after {
+	content: 'Joined WATonomous';
+	background-color: darkorchid;
+}
+  
+#timeline li:nth-child(4) th.timeline-entry:nth-child(2):after {
+	content: 'Website redesign #1';
+	background-color: darkslateblue;
+}
+  
+#timeline li:nth-child(4) th.timeline-entry:nth-child(3):after {
+	content: 'Left WATonomous';
+	background-color: darkslateblue;
+}
+  
+#timeline li:nth-child(4) th.timeline-entry:nth-child(4):after {
+	content: 'Application Developer at CareGo Tek Inc.';
+	background-color: darkslateblue;
+}
+  
+#timeline li:nth-child(4) th.timeline-entry:nth-child(5):after {
+	content: 'Website redesign #2';
+	background-color: darkslateblue;
+}
+
+@media screen and (min-width: 328px) and (max-width: 379px) {
+	#timeline .timeline-date {
+		font-size: 20px;
+	}
+	
+	#timeline th.timeline-entry {
+		font-size: 15px;
+	}
+
+	#timeline .ribbon-right {
+		border-left: 10px solid transparent;
+	}
+	
+	#timeline .ribbon-left {
+		border-left: 10px solid white;
+	}
+
+	#timeline th.timeline-entry:before {
+		height: 35px;
+		transform: translate(3px, 17px);
+	}
+}
+@media screen and (max-width: 328px) {
+	#timeline .timeline-date {
+		font-size: 15px;
+	}
+	
+	#timeline th.timeline-entry {
+		font-size: 10px;
+	}
+
+	#timeline .ribbon-right {
+		border-left: 5px solid transparent;
+	}
+	
+	#timeline .ribbon-left {
+		border-left: 5px solid white;
+	}
+
+	#timeline th.timeline-entry:before {
+		height: 40px;
+		transform: translate(1px, 12px);
+	}
+}
+@media screen and (min-width: 270px) and (max-width: 618px) {
+	#timeline li:nth-child(1) th.timeline-entry:after {
+		transform: translate(-40px, 50px);
+	}
+
+	#timeline li:nth-child(2) th.timeline-entry:after {
+		transform: translate(-100px, 50px);
+	}
+
+	#timeline li:nth-child(3) th.timeline-entry:after {
+		transform: translate(-160px, 50px);
+	}
+
+	#timeline li:nth-child(4) th.timeline-entry:after {
+		transform: translate(-220px, 50px);
+	}
+}
+
+@media screen and (max-width: 270px) {
+	#timeline {
+		padding-bottom: 140px;
+	}
+
+	#timeline li th.timeline-entry:after {
+		width: 150px;
+	}
+
+	#timeline li:nth-child(1) th.timeline-entry:after {
+		transform: translate(-30px, 50px);
+	}
+
+	#timeline li:nth-child(2) th.timeline-entry:after {
+		transform: translate(-60px, 50px);
+	}
+
+	#timeline li:nth-child(3) th.timeline-entry:after {
+		transform: translate(-90px, 50px);
+	}
+
+	#timeline li:nth-child(4) th.timeline-entry:after {
+		transform: translate(-120px, 50px);
+	}
+}
