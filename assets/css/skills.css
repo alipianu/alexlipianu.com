@@ -61,8 +61,8 @@
 }
 
 #skills .skill > .skill-bar.skill-bar-novice.animated > .skill-bar-progress {
-	  -webkit-animation: animate-novice-progress 1.5s ease-out forwards;
-	          animation: animate-novice-progress 1.5s ease-out forwards;
+	-webkit-animation: animate-novice-progress 1.5s ease-out forwards;
+	        animation: animate-novice-progress 1.5s ease-out forwards;
 }
 
 #skills .skill > .skill-bar.skill-bar-novice.animated > .skill-bar-bg {
