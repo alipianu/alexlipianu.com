@@ -15,8 +15,10 @@
 	width: 100%;
 	position: fixed;
 	top: 50%;
-	transform: translate(0,-50%);
 	cursor: default;
+	-webkit-transform: translate(0,-50%);
+		-ms-transform: translate(0,-50%);
+			transform: translate(0,-50%);
 }
 
 #splash-overlay {
@@ -76,6 +78,9 @@ section {
 }
 
 .phrase.animated {
+	-webkit-animation:
+		animate-phrase 3s steps(40, end),
+    	blink-caret .75s step-end infinite;
 	animation:
 		animate-phrase 3s steps(40, end),
     	blink-caret .75s step-end infinite;
@@ -102,26 +107,14 @@ p a, p a:hover, .hovlight:hover h5 {
 }
 
 .hovgrow:hover i {
-	animation-name: growtext;
-	animation-duration: .5s;
-	animation-timing-function: ease-in-out;
-	animation-delay: 0s;
-	animation-iteration-count: 1;
-	animation-direction: alternate;
-	animation-fill-mode: forwards;
-	animation-play-state: running;
-	-ms-animation-name: growtext;
-	-ms-animation-duration: .5s;
-	-ms-animation-timing-function: ease-in-out;
-	-ms-animation-delay: 0s;
-	-ms-animation-iteration-count: 1;
-	-ms-animation-direction: alternate;
-	-ms-animation-fill-mode: forwards;
-	-ms-animation-play-state: running;
+	-webkit-animation: growtext .5s ease-in-out 0s alternate forwards;
+			animation: growtext .5s ease-in-out 0s alternate forwards;
 }
 
 .grow i {
-	transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+		-ms-transform: scale(1.1);
+			transform: scale(1.1);
 }
 
 .exp {
@@ -168,22 +161,8 @@ button {
 
 .colfade {
 	background-color: #FFF;
-	animation-name: transcolor;
-	animation-duration: .5s;
-	animation-timing-function: ease-in-out;
-	animation-delay: 0s;
-	animation-iteration-count: 1;
-	animation-direction: alternate;
-	animation-fill-mode: forwards;
-	animation-play-state: running;
-	-ms-animation-name: transcolor;
-	-ms-animation-duration: .5s;
-	-ms-animation-timing-function: ease-in-out;
-	-ms-animation-delay: 0s;
-	-ms-animation-iteration-count: 1;
-	-ms-animation-direction: alternate;
-	-ms-animation-fill-mode: forwards;
-	-ms-animation-play-state: running;
+	-webkit-animation: transcolor .5s ease-in-out 0s alternate forwards;
+			animation: transcolor .5s ease-in-out 0s alternate forwards;
 }
 
 /* Media queries */
@@ -233,7 +212,11 @@ button {
 }
 
 @keyframes growtext {
-	to { transform: scale(1.1); }
+	to { 
+		-webkit-transform: scale(1.1); 
+			-ms-transform: scale(1.1); 
+				transform: scale(1.1); 
+	}
 }
 
 @keyframes fade-dark {

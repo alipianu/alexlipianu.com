@@ -20,7 +20,7 @@
 	border-collapse: collapse;
 }
   
-#timeline .ribbon-left {
+#timeline .ribbon-left > div {
 	float: left;
 	border-top: 20px solid transparent;
 	border-left: 15px solid white;
@@ -31,51 +31,48 @@
 	padding: 0px;
 }
   
-#timeline th.timeline-entry {
-	font-size: 20px;
+#timeline .timeline-entry > div {
+	width: 10px;
+	height: 10px;
+	background-color: white;
+	border-radius: 50%;
 	color: white;
+	left: 50%;
+	position: relative;
 }
   
-#timeline th.timeline-entry:hover {
-	text-shadow:
-	  -1px -1px 0 #000,
-	  1px -1px 0 #000,
-	  -1px 1px 0 #000,
-	  1px 1px 0 #000,
-	  -1px -1px 0 #000,
-	  1px -1px 0 #000,
-	  -1px 1px 0 #000,
-	  1px 1px 0 #000; 
-}
-  
-#timeline th.timeline-entry:before {
-	content: '';
-	position: absolute;
-	width: 2px;
-	height: 30px;
+#timeline .timeline-entry > div:hover {
 	background-color: black;
-	transform: translate(4px, 22px);
-	display: none;
 }
   
-#timeline th.timeline-entry:hover:before {
+#timeline .timeline-entry > div:before {
+	content: '';
+	position: relative;
+	height: 30px;
+	width: 2px;
+	background-color: black;
+	display: none;
+	top: 100%;
+}
+  
+#timeline .timeline-entry > div:hover:before {
 	display: inline-block;
 }
   
-#timeline th.timeline-entry:after {
-	position: absolute;
+#timeline .timeline-entry > div:after {
+	position: relative;
 	font-size: 15px;
-	color: white;
 	border: 2px solid black;
 	padding: 10px;
-	display:none;
+	display: none;
 	width: 250px;
-	transform: translate(-130px, 50px);
+	-webkit-transform: translatex(-50%);
+		-ms-transform: translatex(-50%);
+			transform: translatex(-50%);
 }
   
-#timeline th.timeline-entry:hover:after {
-	text-shadow: none;
-	display:inline-block;
+#timeline .timeline-entry > div:hover:after {
+	display: inline-block;
 }
   
 #timeline .timeline-date {
@@ -84,7 +81,7 @@
 	font-size: 25px;
 }
   
-#timeline .ribbon-right {
+#timeline .ribbon-right > div {
 	float: right;
 	border-top: 20px solid white;
 	border-left: 15px solid transparent;
@@ -110,76 +107,197 @@
   
 /* add content to each timeline entry */
   
-#timeline li:nth-child(1) th.timeline-entry:after {
+#timeline li:nth-child(1) .timeline-entry > div:after {
 	content: 'Developed and released Paint Street Fighter';
 	background-color: darkorange;
 }
   
-#timeline li:nth-child(2) th.timeline-entry:after {
+#timeline li:nth-child(2) .timeline-entry > div:after {
 	content: 'Software Developer at InFlight Corporation';
 	background-color: darkcyan;
 }
   
-#timeline li:nth-child(3) th.timeline-entry:nth-child(2):after {
+#timeline li:nth-child(3) .timeline-entry:nth-child(2) > div:after {
 	content: 'Launched personal website';
 	background-color: darkorchid;
 }
   
-#timeline li:nth-child(3) th.timeline-entry:nth-child(3):after {
+#timeline li:nth-child(3) .timeline-entry:nth-child(3) > div:after {
 	content: 'Software Developer in Test at InFlight Corporation';
 	background-color: darkorchid;
 }
   
-#timeline li:nth-child(3) th.timeline-entry:nth-child(4):after {
+#timeline li:nth-child(3) .timeline-entry:nth-child(4) > div:after {
 	content: 'Developed and released Imgrypt';
 	background-color: darkorchid;
 }
   
-#timeline li:nth-child(3) th.timeline-entry:nth-child(5):after {
+#timeline li:nth-child(3) .timeline-entry:nth-child(5) > div:after {
 	content: 'Joined WATonomous';
 	background-color: darkorchid;
 }
   
-#timeline li:nth-child(4) th.timeline-entry:nth-child(2):after {
+#timeline li:nth-child(4) .timeline-entry:nth-child(2) > div:after {
 	content: 'Website redesign #1';
 	background-color: darkslateblue;
 }
   
-#timeline li:nth-child(4) th.timeline-entry:nth-child(3):after {
+#timeline li:nth-child(4) .timeline-entry:nth-child(3) > div:after {
 	content: 'Left WATonomous';
 	background-color: darkslateblue;
 }
   
-#timeline li:nth-child(4) th.timeline-entry:nth-child(4):after {
+#timeline li:nth-child(4) .timeline-entry:nth-child(4) > div:after {
 	content: 'Application Developer at CareGo Tek Inc.';
 	background-color: darkslateblue;
 }
   
-#timeline li:nth-child(4) th.timeline-entry:nth-child(5):after {
+#timeline li:nth-child(4) .timeline-entry:nth-child(5) > div:after {
 	content: 'Website redesign #2';
 	background-color: darkslateblue;
 }
 
+
+@media screen and (min-width: 575.5px) and (max-width: 767.5px) {
+	#timeline .timeline-entry > div {
+		width: 7px;
+		height: 7px;
+	}
+
+	#timeline .ribbon > div {
+		border-left-width: 10px;
+	}
+
+	#timeline li .timeline-entry > div:after {
+		width: 150px;
+	}
+
+	#timeline {
+		padding-bottom: 140px;
+	}
+}
+
+@media screen and (min-width: 455.5px) and (max-width: 575.5px) {
+	#timeline .timeline-date {
+		font-size: 20px;
+	}
+
+	#timeline .timeline-entry > div {
+		width: 7px;
+		height: 7px;
+	}
+
+	#timeline .ribbon > div {
+		border-left-width: 7px;
+	}
+
+	#timeline li .timeline-entry > div:after {
+		width: 150px;
+	}
+
+	#timeline {
+		padding-bottom: 140px;
+	}
+}
+
+@media screen and (min-width: 380px) and (max-width: 455.5px) {
+	#timeline .timeline-entry > div {
+		width: 5px;
+		height: 5px;
+	}
+
+	#timeline .ribbon > div {
+		border-left-width: 7px;
+	}
+
+	#timeline .timeline-date {
+		font-size: 15px;
+	}
+
+	#timeline li .timeline-entry > div:after {
+		width: 100px;
+	}
+
+	#timeline {
+		padding-bottom: 140px;
+	}
+
+	#timeline .timeline-entry > div:after {
+		font-size: 12px;
+	}
+}
+
+@media screen and (min-width: 300px) and (max-width: 380px) {
+	#timeline .timeline-entry > div {
+		width: 4px;
+		height: 4px;
+	}
+
+	#timeline .ribbon > div {
+		border-left-width: 5px;
+	}
+
+	#timeline .timeline-date {
+		font-size: 15px;
+	}
+
+	#timeline li .timeline-entry > div:after {
+		width: 100px;
+	}
+
+	#timeline {
+		padding-bottom: 140px;
+	}
+
+	#timeline .timeline-entry > div:after {
+		font-size: 12px;
+	}
+}
+
+@media screen and (max-width: 300px) {
+	#timeline .timeline-entry > div {
+		width: 1px;
+		height: 1px;
+	}
+
+	#timeline .ribbon > div {
+		border-left-width: 4px;
+	}
+
+	#timeline .timeline-date {
+		font-size: 15px;
+	}
+
+	#timeline li .timeline-entry > div:after {
+		width: 100px;
+	}
+
+	#timeline {
+		padding-bottom: 140px;
+	}
+
+	#timeline .timeline-entry > div:after {
+		font-size: 12px;
+	}
+}
+
+/*
 @media screen and (min-width: 328px) and (max-width: 379px) {
 	#timeline .timeline-date {
 		font-size: 20px;
 	}
 	
-	#timeline th.timeline-entry {
-		font-size: 15px;
+	#timeline .timeline-entry > div {
+		width: 7px;
+		height: 7px;
 	}
 
-	#timeline .ribbon-right {
+	#timeline .ribbon-right > div {
 		border-left: 10px solid transparent;
 	}
 	
-	#timeline .ribbon-left {
+	#timeline .ribbon-left > div {
 		border-left: 10px solid white;
-	}
-
-	#timeline th.timeline-entry:before {
-		height: 35px;
-		transform: translate(3px, 17px);
 	}
 }
 @media screen and (max-width: 328px) {
@@ -187,38 +305,42 @@
 		font-size: 15px;
 	}
 	
-	#timeline th.timeline-entry {
-		font-size: 10px;
+	#timeline .timeline-entry > div {
+		width: 5px;
+		height: 5px;
 	}
 
-	#timeline .ribbon-right {
+	#timeline .ribbon-right > div {
 		border-left: 5px solid transparent;
 	}
 	
-	#timeline .ribbon-left {
+	#timeline .ribbon-left > div {
 		border-left: 5px solid white;
-	}
-
-	#timeline th.timeline-entry:before {
-		height: 40px;
-		transform: translate(1px, 12px);
 	}
 }
 @media screen and (min-width: 270px) and (max-width: 618px) {
-	#timeline li:nth-child(1) th.timeline-entry:after {
-		transform: translate(-40px, 50px);
+	#timeline li:nth-child(1) .timeline-entry > div:after {
+		-webkit-transform: translate(-40px, 50px);
+		    -ms-transform: translate(-40px, 50px);
+		        transform: translate(-40px, 50px);
 	}
 
-	#timeline li:nth-child(2) th.timeline-entry:after {
-		transform: translate(-100px, 50px);
+	#timeline li:nth-child(2) .timeline-entry > div:after {
+		-webkit-transform: translate(-100px, 50px);
+		    -ms-transform: translate(-100px, 50px);
+		        transform: translate(-100px, 50px);
 	}
 
-	#timeline li:nth-child(3) th.timeline-entry:after {
-		transform: translate(-160px, 50px);
+	#timeline li:nth-child(3) .timeline-entry > div:after {
+		-webkit-transform: translate(-160px, 50px);
+		    -ms-transform: translate(-160px, 50px);
+		        transform: translate(-160px, 50px);
 	}
 
-	#timeline li:nth-child(4) th.timeline-entry:after {
-		transform: translate(-220px, 50px);
+	#timeline li:nth-child(4) .timeline-entry > div:after {
+		-webkit-transform: translate(-220px, 50px);
+		    -ms-transform: translate(-220px, 50px);
+		        transform: translate(-220px, 50px);
 	}
 }
 
@@ -227,23 +349,32 @@
 		padding-bottom: 140px;
 	}
 
-	#timeline li th.timeline-entry:after {
+	#timeline li .timeline-entry > div:after {
 		width: 150px;
 	}
 
-	#timeline li:nth-child(1) th.timeline-entry:after {
-		transform: translate(-30px, 50px);
+	#timeline li:nth-child(1) .timeline-entry > div:after {
+		-webkit-transform: translate(-30px, 50px);
+		    -ms-transform: translate(-30px, 50px);
+		        transform: translate(-30px, 50px);
 	}
 
-	#timeline li:nth-child(2) th.timeline-entry:after {
-		transform: translate(-60px, 50px);
+	#timeline li:nth-child(2) .timeline-entry > div:after {
+		-webkit-transform: translate(-60px, 50px);
+		    -ms-transform: translate(-60px, 50px);
+		        transform: translate(-60px, 50px);
 	}
 
-	#timeline li:nth-child(3) th.timeline-entry:after {
-		transform: translate(-90px, 50px);
+	#timeline li:nth-child(3) .timeline-entry > div:after {
+		-webkit-transform: translate(-90px, 50px);
+		    -ms-transform: translate(-90px, 50px);
+		        transform: translate(-90px, 50px);
 	}
 
-	#timeline li:nth-child(4) th.timeline-entry:after {
-		transform: translate(-120px, 50px);
+	#timeline li:nth-child(4) .timeline-entry > div:after {
+		-webkit-transform: translate(-120px, 50px);
+		    -ms-transform: translate(-120px, 50px);
+		        transform: translate(-120px, 50px);
 	}
 }
+*/

@@ -41,6 +41,7 @@ footer li {
 	width: 60px;
 	height: 60px;
 	-webkit-transform: translateX(-20px);
+	    -ms-transform: translateX(-20px);
 	        transform: translateX(-20px);
 	border: 2px solid #262626;
 }
