@@ -1,55 +1,84 @@
-.card {
-	display: block;
+#projects {
+	text-align: center;
 }
 
-.project:hover .card-header {
-    -webkit-animation: background-fade 0.5s ease-in-out 0s 1 alternate forwards;
-            animation: background-fade 0.5s ease-in-out 0s 1 alternate forwards;
-}
-
-.project:hover {
-    -webkit-animation: border-fade 0.5s ease-in-out 0s 1 alternate forwards;
-            animation: border-fade 0.5s ease-in-out 0s 1 alternate forwards;
-}
-
-.project {
+#projects .card {
 	margin-top: 40px;
+	max-width: 500px;
+	display: inline-block;
 }
 
-.tools {
+#projects .card-body {
+	text-align: initial;
+}
+
+#projects .card:hover > .card-header {
+    -webkit-animation: animate-card-header 0.5s ease-in-out 0s 1 alternate forwards;
+            animation: animate-card-header 0.5s ease-in-out 0s 1 alternate forwards;
+}
+
+#projects :hover {
+    -webkit-animation: animate-card-border 0.5s ease-in-out 0s 1 alternate forwards;
+            animation: animate-card-border 0.5s ease-in-out 0s 1 alternate forwards;
+}
+
+#projects .tools {
 	padding: 0px;
 	color: #FFF;
-	text-align: center;
 	cursor: default;
 }
 
-.tools li {
+#projects .tools > li {
 	display: inline-block;
-	border-style: solid;
-	border-width: 1.5px;
-	padding-left: 8px;
-	padding-right: 8px;
-	margin-right: 5px;
-	margin-bottom: 5px;
+	border: 1.5px solid;
+	padding: 0 8px 0 8px;
+	margin: 2px;
 	border-radius: 5px;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
-.tools .language {
+#projects .tools > .language {
 	background-color: #03A9F4;
 	border-color: #015a83;
 }
 
-.tools .framework {
+#projects .tools > .framework {
 	background-color: #4CAF50;
 	border-color: #285c29;
 }
 
-.tools .library {
+#projects .tools > .library {
 	background-color: #FF9800;
 	border-color: #814e00;
 }
 
-.tools .platform {
+#projects .tools > .platform {
 	background-color: #9C27B0;
 	border-color: #54155f;
+}
+
+@-webkit-keyframes animate-card-header {
+	to { 
+		background-color: #17A2B8;
+		color: white;
+	}
+}
+
+@keyframes animate-card-header {
+	to { 
+		background-color: #17A2B8;
+		color: white;
+	}
+}
+
+@-webkit-keyframes animate-card-border {
+	to { border-color: #17A2B8; }
+}
+
+@keyframes animate-card-border {
+	to { border-color: #17A2B8; }
 }

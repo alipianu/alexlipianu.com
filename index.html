@@ -5,13 +5,13 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="icon" href="favicon.ico">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Kosugi+Maru" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="assets/css/index.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/timeline.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/skills.css">
@@ -34,8 +34,8 @@
 
 <body>
 	<!-- Splash -->
-	<div class="splash">
-		<div id="splash-overlay"></div>
+	<div id="splash">
+		<div></div>
 		<table>
 			<tr>
 				<td>
@@ -46,7 +46,7 @@
 		</table>
 	</div>
 
-	<!-- Content -->
+	<!-- Main Content -->
 	<div id="front">
 
 		<!-- About -->
@@ -58,9 +58,7 @@
 						<img id="headshot" src="assets/img/headshot.jpg" class="img-responsive img-fluid rounded-circle" alt="headshot">
 					</div>
 					<div class="col-md-7 offset-md-1">
-						<br/>
 						<h4 class="phrase">Hi there, I'm Alex!</h4>
-						<br/>
 						<div class="description">
 							<p>
 								My name is Alexander Lipianu and I am a Software Developer from Ontario, Canada.
@@ -92,7 +90,7 @@
 		<section id="timeline">
 			<div class="container">
 				<h2>Timeline</h2>
-				<p class="description" style="margin-bottom:30px">
+				<p class="description">
 					Below you'll find a timeline of my projects, co-ops, internships, and design teams throughout my high school and undergrad
 					education. Hover the timeline entries to view their descriptions.
 				</p>
@@ -170,9 +168,6 @@
 								<th class="timeline-entry">
 									<div></div>
 								</th>
-								<th class="timeline-entry">
-									<div></div>
-								</th>
 								<th class="ribbon ribbon-right">
 									<div></div>
 								</th>
@@ -187,9 +182,9 @@
 		<section id="skills">
 			<div class="container">
 				<h2>Skills</h2>
-				<p class="description" style="margin-bottom:30px">
-					With over one year of work experience and several completed projects, I've managed to accumulate experience with a large variety of 
-					languages, frameworks, and technologies.
+				<p class="description">
+					With over one year of work experience and several completed projects, I've managed to accumulate experience with a large
+					variety of languages, frameworks, and technologies.
 					<!--Toggle the proficiency bars below to learn more about where and how I learned and used each skill.-->
 				</p>
 
@@ -363,14 +358,14 @@
 		<section id="experience">
 			<div class="container">
 				<h2>Experience</h2>
-				<p class="description" style="margin-bottom:30px">
-					Flexibility, adaptability and versatility are some of the most important traits that a software developer can possess. That is why I have taken it upon myself to learn as much as I can, both
-					inside and outside the workplace, in several different areas of software development. Toggle the icons below to learn
-					about my experiences in each area.
+				<p class="description">
+					Flexibility, adaptability and versatility are some of the most important traits that a software developer can possess. That
+					is why I have taken it upon myself to learn as much as I can, both inside and outside the workplace, in several different
+					areas of software development. Toggle the icons below to learn about my experiences in each area.
 				</p>
 				<div class="row">
 					<div id="test-fade" class="col-lg-4">
-						<div id="test" class="hitbox hovlight hovgrow">
+						<div id="test" class="hovlight hovgrow collapsable">
 							<i class="fa fa-cogs exp" aria-hidden="true"></i>
 							<h5>
 								<br/> Testing
@@ -381,12 +376,12 @@
 						<!-- displayed on mobile -->
 						<div id="test-drop" style="display:none;color:#FFF">
 							<hr>
-							<p class="align-hidden"></p>
+							<p class="description"></p>
 							<hr>
 						</div>
 					</div>
 					<div id="web-fade" class="col-lg-4">
-						<div id="web" class="hitbox hovlight hovgrow">
+						<div id="web" class="hovlight hovgrow collapsable">
 							<i class="fa fa-globe exp" aria-hidden="true"></i>
 							<h5>
 								<br/> Web
@@ -397,12 +392,12 @@
 						<!-- displayed on mobile -->
 						<div id="web-drop" style="display:none;color:#FFF">
 							<hr>
-							<p class="align-hidden"></p>
+							<p class="description"></p>
 							<hr>
 						</div>
 					</div>
 					<div id="game-fade" class="col-lg-4">
-						<div id="game" class="hitbox hovlight hovgrow">
+						<div id="game" class="hovlight hovgrow collapsable">
 							<i class="fa fa-gamepad exp" aria-hidden="true"></i>
 							<h5>
 								Graphics
@@ -414,7 +409,7 @@
 						<!-- displayed on mobile -->
 						<div id="game-drop" style="display:none;color:#FFF">
 							<hr>
-							<p class="align-hidden"></p>
+							<p class="description"></p>
 							<hr>
 						</div>
 					</div>
@@ -424,7 +419,7 @@
 				<div id="test-drop-row" style="display:none;color:#FFF">
 					<div id="test-fade-row" class="row">
 						<div class="col-sm-12">
-							<p class="align-hidden"></p>
+							<p class="description"></p>
 						</div>
 					</div>
 				</div>
@@ -433,7 +428,7 @@
 				<div id="web-drop-row" style="display:none;color:#FFF">
 					<div id="web-fade-row" class="row">
 						<div class="col-sm-12">
-							<p class="align-hidden"></p>
+							<p class="description"></p>
 						</div>
 					</div>
 				</div>
@@ -442,7 +437,7 @@
 				<div id="game-drop-row" style="display:none;color:#FFF">
 					<div id="game-fade-row" class="row">
 						<div class="col-sm-12">
-							<p class="align-hidden"></p>
+							<p class="description"></p>
 						</div>
 					</div>
 				</div>
@@ -464,8 +459,8 @@
 					<li class="platform">platform</li>
 				</ul>
 				<div class="row">
-					<div class="col-md-4">
-						<div class="card bg-light project">
+					<div class="col-lg-4">
+						<div class="card bg-light">
 							<div class="card-header">
 								<h5>Imgrypt</h5>
 							</div>
@@ -510,8 +505,8 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4">
-						<div class="card bg-light project">
+					<div class="col-lg-4">
+						<div class="card bg-light">
 							<div class="card-header">
 								<h5>Website</h5>
 							</div>
@@ -550,8 +545,8 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4">
-						<div class="card bg-light project">
+					<div class="col-lg-4">
+						<div class="card bg-light">
 							<div class="card-header">
 								<h5>Paint Street Fighter</h5>
 							</div>
@@ -608,7 +603,7 @@
 		<section id="pens">
 			<div class="container">
 				<h2>Pens</h2>
-				<p class="description" style="margin-bottom:30px">
+				<p class="description">
 					Pens give me the freedom and opportunity to easily experiment with different front-end technologies and tools, all while
 					having fun designing quirky little animations and art. Below you’ll find some of my pens along with their source code,
 					feel free to checkout my CodePen for more!
@@ -651,39 +646,39 @@
 				</div>
 			</div>
 		</section>
-	</div>
 
-	<!-- Footer -->
-	<footer>
-		<div>
-			<ul>
-				<li>
-					<a href="mailto:alexlipianu@live.ca?subject=Website%20Redirect">
-						<i class="fa fa-envelope" aria-hidden="true"></i>
-					</a>
-				</li>
-				<li>
-					<a href="https://ca.linkedin.com/in/alipianu" target="_blank">
-						<i class="fa fa-linkedin" aria-hidden="true"></i>
-					</a>
-				</li>
-				<li>
-					<a href="https://github.com/alipianu" target="_blank">
-						<i class="fa fa-github" aria-hidden="true"></i>
-					</a>
-				</li>
-				<li>
-					<a href="https://codepen.io/alipianu/" target="_blank">
-						<i class="fa fa-codepen" aria-hidden="true"></i>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div>
-			<p id="copyright"></p>
-			<p>All rights reserved</p>
-		</div>
-	</footer>
+		<!-- Footer -->
+		<footer>
+			<div>
+				<ul>
+					<li>
+						<a href="mailto:alexlipianu@live.ca?subject=Website%20Redirect">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</a>
+					</li>
+					<li>
+						<a href="https://ca.linkedin.com/in/alipianu" target="_blank">
+							<i class="fa fa-linkedin" aria-hidden="true"></i>
+						</a>
+					</li>
+					<li>
+						<a href="https://github.com/alipianu" target="_blank">
+							<i class="fa fa-github" aria-hidden="true"></i>
+						</a>
+					</li>
+					<li>
+						<a href="https://codepen.io/alipianu/" target="_blank">
+							<i class="fa fa-codepen" aria-hidden="true"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<p id="copyright"></p>
+				<p>All rights reserved</p>
+			</div>
+		</footer>
+	</div>
 </body>
 
 </html>

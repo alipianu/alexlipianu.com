@@ -5,46 +5,51 @@
 	padding: 0;
 	text-align: center;
 }
-  
+
 #timeline li {
-	position: relative;
 	display: inline-block;
 	width: 20%;
 }
-  
+
 #timeline table {
-	position: relative;
-	display: inline-table;
 	width: 100%;
 	height: 100%;
 	border-collapse: collapse;
+	border: 0 solid transparent;
 }
-  
+
 #timeline .ribbon-left > div {
 	float: left;
 	border-top: 20px solid transparent;
 	border-left: 15px solid white;
 	border-bottom: 20px solid transparent;
 }
-  
+
+#timeline .ribbon-right > div {
+	float: right;
+	border-top: 20px solid white;
+	border-left: 15px solid transparent;
+	border-bottom: 20px solid white;
+}
+
 #timeline th {
 	padding: 0px;
 }
-  
+
 #timeline .timeline-entry > div {
+	position: relative;
+	left: 50%;
 	width: 10px;
 	height: 10px;
 	background-color: white;
 	border-radius: 50%;
 	color: white;
-	left: 50%;
-	position: relative;
 }
-  
-#timeline .timeline-entry > div:hover {
+
+#timeline .timeline-entry:hover > div {
 	background-color: black;
 }
-  
+
 #timeline .timeline-entry > div:before {
 	content: '';
 	position: relative;
@@ -54,11 +59,7 @@
 	display: none;
 	top: 100%;
 }
-  
-#timeline .timeline-entry > div:hover:before {
-	display: inline-block;
-}
-  
+
 #timeline .timeline-entry > div:after {
 	position: relative;
 	font-size: 15px;
@@ -70,38 +71,32 @@
 		-ms-transform: translatex(-50%);
 			transform: translatex(-50%);
 }
-  
-#timeline .timeline-entry > div:hover:after {
+
+#timeline .timeline-entry:hover > div:before,
+#timeline .timeline-entry:hover > div:after {
 	display: inline-block;
 }
-  
+
 #timeline .timeline-date {
 	margin-bottom: 10px;
 	font-family: 'Kosugi Maru', sans-serif;
 	font-size: 25px;
 }
-  
-#timeline .ribbon-right > div {
-	float: right;
-	border-top: 20px solid white;
-	border-left: 15px solid transparent;
-	border-bottom: 20px solid white;
-}
-  
+
 /* color individual ribbons */
-#timeline li:nth-child(1) > table tr {
+#timeline li:nth-child(1) > table th {
 	background-color: darkorange;
 }
-  
-#timeline li:nth-child(2) > table tr {
+
+#timeline li:nth-child(2) > table th {
 	background-color: darkcyan;
 }
   
-#timeline li:nth-child(3) > table tr {
+#timeline li:nth-child(3) > table th {
 	background-color: darkorchid;
 }
   
-#timeline li:nth-child(4) > table tr {
+#timeline li:nth-child(4) > table th {
 	background-color: darkslateblue;
 }
   
@@ -133,26 +128,21 @@
 }
   
 #timeline li:nth-child(3) .timeline-entry:nth-child(5) > div:after {
-	content: 'Joined WATonomous';
+	content: 'Simulation Sub Team Member on WATonomous';
 	background-color: darkorchid;
 }
-  
+
 #timeline li:nth-child(4) .timeline-entry:nth-child(2) > div:after {
 	content: 'Website redesign #1';
 	background-color: darkslateblue;
 }
   
 #timeline li:nth-child(4) .timeline-entry:nth-child(3) > div:after {
-	content: 'Left WATonomous';
-	background-color: darkslateblue;
-}
-  
-#timeline li:nth-child(4) .timeline-entry:nth-child(4) > div:after {
 	content: 'Application Developer at CareGo Tek Inc.';
 	background-color: darkslateblue;
 }
   
-#timeline li:nth-child(4) .timeline-entry:nth-child(5) > div:after {
+#timeline li:nth-child(4) .timeline-entry:nth-child(4) > div:after {
 	content: 'Website redesign #2';
 	background-color: darkslateblue;
 }
@@ -168,12 +158,12 @@
 		border-left-width: 10px;
 	}
 
-	#timeline li .timeline-entry > div:after {
+	#timeline .timeline-entry > div:after {
 		width: 150px;
 	}
 
 	#timeline {
-		padding-bottom: 140px;
+		padding-bottom: 130px;
 	}
 }
 
@@ -191,12 +181,12 @@
 		border-left-width: 7px;
 	}
 
-	#timeline li .timeline-entry > div:after {
+	#timeline .timeline-entry > div:after {
 		width: 150px;
 	}
 
 	#timeline {
-		padding-bottom: 140px;
+		padding-bottom: 130px;
 	}
 }
 
@@ -214,12 +204,12 @@
 		font-size: 15px;
 	}
 
-	#timeline li .timeline-entry > div:after {
+	#timeline .timeline-entry > div:after {
 		width: 100px;
 	}
 
 	#timeline {
-		padding-bottom: 140px;
+		padding-bottom: 130px;
 	}
 
 	#timeline .timeline-entry > div:after {
@@ -241,12 +231,12 @@
 		font-size: 15px;
 	}
 
-	#timeline li .timeline-entry > div:after {
+	#timeline .timeline-entry > div:after {
 		width: 100px;
 	}
 
 	#timeline {
-		padding-bottom: 140px;
+		padding-bottom: 130px;
 	}
 
 	#timeline .timeline-entry > div:after {
@@ -268,113 +258,15 @@
 		font-size: 15px;
 	}
 
-	#timeline li .timeline-entry > div:after {
+	#timeline .timeline-entry > div:after {
 		width: 100px;
 	}
 
 	#timeline {
-		padding-bottom: 140px;
+		padding-bottom: 130px;
 	}
 
 	#timeline .timeline-entry > div:after {
 		font-size: 12px;
 	}
 }
-
-/*
-@media screen and (min-width: 328px) and (max-width: 379px) {
-	#timeline .timeline-date {
-		font-size: 20px;
-	}
-	
-	#timeline .timeline-entry > div {
-		width: 7px;
-		height: 7px;
-	}
-
-	#timeline .ribbon-right > div {
-		border-left: 10px solid transparent;
-	}
-	
-	#timeline .ribbon-left > div {
-		border-left: 10px solid white;
-	}
-}
-@media screen and (max-width: 328px) {
-	#timeline .timeline-date {
-		font-size: 15px;
-	}
-	
-	#timeline .timeline-entry > div {
-		width: 5px;
-		height: 5px;
-	}
-
-	#timeline .ribbon-right > div {
-		border-left: 5px solid transparent;
-	}
-	
-	#timeline .ribbon-left > div {
-		border-left: 5px solid white;
-	}
-}
-@media screen and (min-width: 270px) and (max-width: 618px) {
-	#timeline li:nth-child(1) .timeline-entry > div:after {
-		-webkit-transform: translate(-40px, 50px);
-		    -ms-transform: translate(-40px, 50px);
-		        transform: translate(-40px, 50px);
-	}
-
-	#timeline li:nth-child(2) .timeline-entry > div:after {
-		-webkit-transform: translate(-100px, 50px);
-		    -ms-transform: translate(-100px, 50px);
-		        transform: translate(-100px, 50px);
-	}
-
-	#timeline li:nth-child(3) .timeline-entry > div:after {
-		-webkit-transform: translate(-160px, 50px);
-		    -ms-transform: translate(-160px, 50px);
-		        transform: translate(-160px, 50px);
-	}
-
-	#timeline li:nth-child(4) .timeline-entry > div:after {
-		-webkit-transform: translate(-220px, 50px);
-		    -ms-transform: translate(-220px, 50px);
-		        transform: translate(-220px, 50px);
-	}
-}
-
-@media screen and (max-width: 270px) {
-	#timeline {
-		padding-bottom: 140px;
-	}
-
-	#timeline li .timeline-entry > div:after {
-		width: 150px;
-	}
-
-	#timeline li:nth-child(1) .timeline-entry > div:after {
-		-webkit-transform: translate(-30px, 50px);
-		    -ms-transform: translate(-30px, 50px);
-		        transform: translate(-30px, 50px);
-	}
-
-	#timeline li:nth-child(2) .timeline-entry > div:after {
-		-webkit-transform: translate(-60px, 50px);
-		    -ms-transform: translate(-60px, 50px);
-		        transform: translate(-60px, 50px);
-	}
-
-	#timeline li:nth-child(3) .timeline-entry > div:after {
-		-webkit-transform: translate(-90px, 50px);
-		    -ms-transform: translate(-90px, 50px);
-		        transform: translate(-90px, 50px);
-	}
-
-	#timeline li:nth-child(4) .timeline-entry > div:after {
-		-webkit-transform: translate(-120px, 50px);
-		    -ms-transform: translate(-120px, 50px);
-		        transform: translate(-120px, 50px);
-	}
-}
-*/

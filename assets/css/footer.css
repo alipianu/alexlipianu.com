@@ -1,54 +1,31 @@
-.footer {
-	right: 0;
-	bottom: 0;
-	left: 0;
-	padding: 0;
+footer {
 	text-align: center;
-}
-
-footer > div:first-child {
 	background-color: #262626;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	color: #FFF;
-	position: relative;
-	text-align: center;
+	padding: 20px 0 10px 0;
 }
 
-footer > div:last-child {
-	background-color: #262626;
-	padding: 10px;
+footer p {
+	margin: 0;
 	color: #FFF;
-	position: relative;
-	text-align: center;
 }
 
-footer > div > p {
-	margin: 0px;
+footer a {
+	color:#262626;
+	font-size: 35px;
 }
 
 footer ul {
-	margin-bottom: 3px;
+	padding: 0px;
 }
 
 footer li {
 	background-color: #FFF;
 	border-radius: 50%;
 	display: inline-block;
-	padding: 0;
-	margin-top: 4px;
-	line-height: 60px;
-	width: 60px;
-	height: 60px;
-	-webkit-transform: translateX(-20px);
-	    -ms-transform: translateX(-20px);
-	        transform: translateX(-20px);
+	width: 57px;
+	height: 57px;
 	border: 2px solid #262626;
-}
-
-footer li > a {
-	color:#262626;
-	font-size: 35px;
+	margin: 0 20px 0 20px;
 }
 
 footer li:hover {
@@ -56,21 +33,12 @@ footer li:hover {
 	background-color: #262626;
 }
 
-footer ul > li:hover a {
+footer li:hover a {
 	color: white;
 }
 
-@media screen and (min-width:476px) {
-	footer ul > li {
-		margin-left: 20px;
-		margin-right: 20px;
-	}
-}
-
 @media screen and (max-width:475px) {
-	footer ul > li {
-		margin-left: 0px;
-		margin-right: 0px;
+	footer li {
+		margin: 0;
 	}
 }
-
