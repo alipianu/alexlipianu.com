@@ -1,4 +1,4 @@
-.splash {
+#splash {
 	min-height: 100%;
 	min-height: 100vh;
 	background-image: url(../img/bluesky.jpg);
@@ -6,29 +6,32 @@
 	background-repeat: no-repeat;
 	background-position: 25% 100%;
 	background-attachment: fixed;
-}
-
-.splash table {
 	text-shadow: black 0.3em 0.3em 0.3em;
 	color: #FFF;
 	text-align: center;
+}
+
+#splash table {
 	width: 100%;
 	position: fixed;
 	top: 50%;
 	cursor: default;
-	-webkit-transform: translate(0,-50%);
-		-ms-transform: translate(0,-50%);
-			transform: translate(0,-50%);
+	-webkit-transform: translatey(-50%);
+		-ms-transform: translatey(-50%);
+			transform: translatey(-50%);
 }
 
-#splash-overlay {
-	background-color:#262626;
-	opacity:0;
-	position:absolute;
-	top:0;
-	width:100%;
-	height:100%;
-	height:100vh;
+#splash > div {
+	background-color: #262626;
+	opacity: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	height: 100vh;
+}
+
+#headshot {
+	margin-top: 40px;
 }
 
 #name {
@@ -42,8 +45,7 @@
 }
 
 section {
-	padding-top: 50px;
-	padding-bottom: 100px;
+	padding: 50px 0 100px 0;
 	overflow: hidden;
 }
 
@@ -51,20 +53,16 @@ section {
 	color: #FFF;
 }
 
-#projects p.description, #timeline p.description, #experience p.description, #pens p.description, #skills p.description, .hitbox, .project .card-header, .card-body div {
+.container > p.description, .collapsable, .project .card-header, .card-body div {
 	text-align: center;
 }
 
-#about .description {
+#about .description, .exp {
 	padding-top: 40px;
 }
 
 #about, #projects, #skills {
 	background-color: #262626;
-}
-
-#headshot {
-	margin-top:40px;
 }
 
 .phrase {
@@ -74,7 +72,7 @@ section {
 	float: left;
 	width: 247px;
 	white-space: nowrap;
-	margin: 0 auto;
+	margin-top: 20px;
 }
 
 .phrase.animated {
@@ -94,42 +92,38 @@ p a, p a:hover, .hovlight:hover h5 {
 	background-color: #FFF;
 }
 
-#timeline h2, #experience h2, #skills h2, #projects h2, #pens h2 {
-	margin-bottom: 40px;
-}
-
 #experience hr {
 	border-color:#FFF;
 }
 
-.hitbox, button {
+.collapsable, button {
 	cursor: pointer;
 }
 
-.hovgrow:hover i {
+.hovgrow.hovlight:hover i {
 	-webkit-animation: growtext .5s ease-in-out 0s alternate forwards;
 			animation: growtext .5s ease-in-out 0s alternate forwards;
 }
 
-.grow i {
+.hovgrow:not(.hovlight) i {
 	-webkit-transform: scale(1.1);
 		-ms-transform: scale(1.1);
 			transform: scale(1.1);
 }
 
-.exp {
-	padding-top: 30px;
-}
-
-.align-hidden {
-	margin-top:30px;
-	margin-bottom:30px;
+.description {
+	margin: 30px 0 30px 0;
 }
 
 h2 {
 	font-family: "Arial Black", Gadget, sans-serif;
 	font-size: 45px;
 	text-align: center;
+	margin-bottom: 30px;
+}
+
+#about h2 {
+	margin: 0;
 }
 
 h4 {
@@ -154,9 +148,7 @@ p, li {
 }
 
 button {
-	margin-top: 10px;
-	margin-left: 5px;
-	margin-right: 5px;
+	margin: 10px 5px 0 5px;
 }
 
 .colfade {
@@ -169,25 +161,19 @@ button {
 
 @media screen and (max-width: 768px) {
 	#name {
-		font-size:16vw;
+		font-size: 16vw;
 	}
 	#title {
 		font-size: 8vw;
-	}
-	.splash span {
-		white-space:wrap;
 	}
 }
 
 @media screen and (min-width: 768px) {
 	#name {
-		font-size:8vw;
+		font-size: 8vw;
 	}
 	#title {
-		font-size:4vw;
-	}
-	.splash span {
-		white-space:nowrap;
+		font-size: 4vw;
 	}
 }
 
@@ -203,16 +189,8 @@ button {
 	}
 }
 
-@keyframes background-fade {
-	to { background: #17A2B8; }
-}
-
-@keyframes border-fade {
-	to { border-color: #17A2B8; }
-}
-
 @keyframes growtext {
-	to { 
+	to {
 		-webkit-transform: scale(1.1); 
 			-ms-transform: scale(1.1); 
 				transform: scale(1.1); 
@@ -220,12 +198,12 @@ button {
 }
 
 @keyframes fade-dark {
-	to { background: #262626; }
+	to { background-color: #262626; }
 }
 
 @keyframes transcolor {
-	from { background: #FFF; }
-	to { background: #17A2B8;
+	from { background-color: #FFF; }
+	to { background-color: #17A2B8;
 		 color: white; }
 }
 
