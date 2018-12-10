@@ -1,8 +1,8 @@
 // Before you read through my code (hi stranger!):
-// - I used very minimal use of jQuery, wanted to stick as close as possible to vanilla JS
-// - my site uses very basic dom manipulation and searching, so I'd prefer not having to load any extra unneccessary
-//   bloated dependencies to do things that can be easily accomplished with vanilla JS
-// - however, with that being said, but for the time being I still need to include the jQuery dependency anyway
+// - I made very minimal use jQuery, wanted to stick as close as possible to vanilla JS
+// - my site uses very basic dom manipulation and searching, so I'd prefer not having to unneccessarily load any extra
+//   bloated dependencies to do things that can be easily accomplished with plain JS
+// - with that being said, for the time being I still need to include the jQuery dependency
 //   for Bootstrap 4
 // - because I used very minimal jQuery, in the future, if I decide to remove Bootstrap and go with pure CSS,
 //   then simultaneously removing the jQuery dependency would be very easy
@@ -52,7 +52,6 @@ $(document).ready(function () {
     // taken straight form stack overflow:
     //    https://stackoverflow.com/questions/6927637/addeventlistener-in-internet-explorer
     function addEvent(evnt, elem, func) {
-        console.log('a');
         if (elem.addEventListener)  // W3C DOM
            elem.addEventListener(evnt,func,false);
         else if (elem.attachEvent) { // IE DOM
@@ -80,9 +79,6 @@ $(document).ready(function () {
         document.querySelector('#' + exp + '-drop p').innerHTML = experienceContent[exp];
         document.querySelector('#' + exp + '-fade-row p').innerHTML = experienceContent[exp];
     }
-
-    // populate copyright
-    document.getElementById('copyright').innerHTML = '&copy ' + (new Date()).getFullYear() + ' Alexander Lipianu';
 
     // add onclick to experience section
     var collapsable = document.getElementsByClassName('collapsable');
