@@ -1,0 +1,29 @@
+.card.project {
+  margin: auto;
+  margin-top: 40px;
+  max-width: 500px;
+
+  .card-buttons {
+    position: relative;
+    z-index: 2;
+    width: 0px;
+    height: 0px;
+    white-space: nowrap;
+    margin-left: auto;
+    transform: translateY(-25px);
+  }
+
+  .card-body {
+    color: black;
+    text-align: left;
+    border-top: 1px solid #262626;
+
+    .card-title {
+      margin-top: 10px;
+    }
+
+    div.tools {
+      margin: 10px;
+    }
+  }
+}

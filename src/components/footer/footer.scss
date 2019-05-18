@@ -1,0 +1,26 @@
+footer {
+  text-align: center;
+  background-color: #262626;
+  color: #FFF;
+
+  div {
+    padding: 5px 0 5px 0;
+    
+    &:first-child {
+      padding-top: 15px;
+    }
+    &:last-child {
+      padding-bottom: 15px;
+    }
+
+    p {
+      margin: 0;
+    }
+  
+    .footer-button {
+      @media screen and (max-width:475px) {
+        margin: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+@keyframes animateToggle {
+    to { transform: rotate(-180deg) }
+  }
+  @keyframes growtext {
+    to { transform: scale(1.1) }
+  }
+  
+  .grid-experience {
+    @keyframes transitionExpandedLight {
+      to { background-color: #17A2B8; color: #FFF; }
+    }
+    .head-collapse {
+      padding-top: 60px;
+  
+      svg {
+        @media screen and (max-width: 768px) {
+          font-size: 10em;
+        }
+        @media screen and (min-width: 768px) and (max-width: 992px)  {
+          font-size: 6em;
+        }
+        @media screen and (min-width: 992px) {
+          font-size: 8em;
+        }
+      }
+  
+      h5 {
+        margin: 0;
+        padding: 1em;
+      }
+  
+      &.has-body {
+        h5:after {
+          margin-left: 10px;
+          position: absolute;
+          font-family: "Font Awesome 5 Free";
+          content: "\f0d7";
+          font-weight: 900;
+        }
+        
+        &:not(.expanded) {
+          &:hover {
+            svg {
+              animation: growtext .5s ease-in-out 0s alternate forwards;
+            }
+            h5 {
+              color: #17A2B8;
+            }
+          }
+        }
+      }
+  
+      &.expanded {
+        animation: transitionExpandedLight .5s ease-in-out 0s alternate forwards;
+  
+        svg {
+          transform: scale(1.1);
+        }
+        h5:after {
+          animation: animateToggle .2s linear 0s alternate forwards;
+        }
+      }
+    }
+  
+    .body-collapse {
+      padding: 20px;
+      &.expanded {
+        animation: transitionExpandedLight .5s ease-in-out 0s alternate forwards;
+      }
+    }
+  }
+  

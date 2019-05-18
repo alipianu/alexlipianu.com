@@ -1,0 +1,16 @@
+#name {
+  font-size: 8vw;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+  @media screen and (max-width: 768px) {
+    font-size: 16vw;
+  }
+}
+
+#title {
+  font-size: 4vw;
+
+  @media screen and (max-width: 768px) {
+    font-size: 8vw;
+  }
+}
