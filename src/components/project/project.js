@@ -23,7 +23,7 @@ const Project = (props) => (
       {props.description && <Card.Text>{props.description}</Card.Text>}
       {props.tools && (
         <div className="tools">
-          {Object.keys(props.tools).map((type) => props.tools[type].map((tool) => <Tag type={type} typeMap={props.tagMap} label={tool} />))}
+          {Object.keys(props.tools).map((type) => props.tools[type].map((tool, i) => <Tag key={i} type={type} typeMap={props.tagMap} label={tool} />))}
         </div>
       )}
     </Card.Body>
