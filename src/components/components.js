@@ -11,6 +11,7 @@ import Timeline from './timeline/timeline';
 import Typewrite from './typewrite/typewrite'; 
 import IconButton from './icon-button/icon-button';
 import Tag from './tag/tag';
+import Codepen from './codepen/codepen';
 
 // Component module
 export {
@@ -26,5 +27,6 @@ export {
   Timeline,
   Typewrite,
   IconButton,
-  Tag
+  Tag,
+  Codepen
 }
