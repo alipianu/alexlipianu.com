@@ -2,9 +2,17 @@ import './loader.scss';
 import React from 'react';
 import classnames from 'classnames';
 
+/**
+ * Loader component
+ * 
+ * usage: <Loader loader?={W} animation?={X} onSuccess={Y} onError={Z}>...</Loader>
+ */
 class Loader extends React.Component {
   state = { elapsed: 0, maxDots: 4, loaded: false, error: null };
 
+  /**
+   * Loads data
+   */
   componentDidMount() {
     const loadingTextInterval = setInterval(() => this.setState({elapsed: (this.state.elapsed + 1) % this.state.maxDots}), 2000);
 
@@ -20,7 +28,7 @@ class Loader extends React.Component {
           if (this.props.onError) {
             this.props.onSuccess(error);
           }
-          this.setState({ error }, () => clearInterval(loadingTextInterval));
+          this.setState({ error });
         }
       );
     } else {
@@ -28,6 +36,9 @@ class Loader extends React.Component {
     }
   }
 
+  /**
+   * Builds loading text
+   */
   loadingText() {
     let dots = [];
     let visible = false;
@@ -41,6 +52,9 @@ class Loader extends React.Component {
     return <><span className="loader-text">Loading</span>{dots}</>;
   }
 
+  /**
+   * Renders loader
+   */
   render() {
     return !this.state.error && this.state.loaded ?
       this.props.children :
