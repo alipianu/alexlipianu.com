@@ -10,7 +10,7 @@ import { IconButton } from '../components';
 const Footer = () => {
   const year = (new Date()).getFullYear();
   return (
-    <>
+    <footer>
       <div>
         <IconButton className="footer-button" ariaLabel="Email" href="mailto:alexlipianu@live.ca?subject=Website%20Redirect" icon="envelope" />
         <IconButton className="footer-button" ariaLabel="LinkedIn" href="https://ca.linkedin.com/in/alipianu" prefix="fab" icon="linkedin" />
@@ -21,7 +21,7 @@ const Footer = () => {
         <p>@ {year} Alexander Lipianu</p>
         <p>All rights reserved</p>
       </div>
-    </>
+    </footer>
   );
 };
 

@@ -12,7 +12,7 @@ import { IconButton, Tag } from '../components';
 const Project = (props) => (
   <Card className='project'>
     <div>
-      {props.image && <Card.Img variant="top" src={props.image} />}
+      {props.image && <Card.Img variant="top" src={props.image} alt={`${props.title} thumbnail`} />}
     </div>
     {props.links && (
       <div className="card-buttons">

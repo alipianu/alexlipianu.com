@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
-import { Footer } from './components/components';
 import * as serviceWorker from './serviceWorker';
 
 // build font awesome library
@@ -16,13 +15,7 @@ library.add(
   faGithub, faLinkedin, faCodepen
 );
 
-// render app
 ReactDOM.render(<App />, document.getElementById('root'));
-// render footer
-const footerElement = document.getElementsByTagName('footer')[0];
-if (footerElement) {
-  ReactDOM.render( <Footer />, footerElement);
-}
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

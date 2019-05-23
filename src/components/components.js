@@ -12,6 +12,8 @@ import Typewrite from './typewrite/typewrite';
 import IconButton from './icon-button/icon-button';
 import Tag from './tag/tag';
 import Codepen from './codepen/codepen';
+import Loader from './loader/loader';
+import LoadingAnimation from './polyhedrons/polyhedrons';
 
 // Component module
 export {
@@ -28,5 +30,7 @@ export {
   Typewrite,
   IconButton,
   Tag,
-  Codepen
+  Codepen,
+  Loader,
+  LoadingAnimation
 }

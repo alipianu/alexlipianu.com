@@ -1,0 +1,119 @@
+div.shape-face {
+  position: absolute;
+  transform-style: preserve-3d;
+  &:not(.rect) {
+    border-style: solid;
+  }
+  &.rect {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// tetrahedron
+.tetrahedron {
+  >div.shape-face {
+    transform-origin: 50% 0;
+    border-width: 0 75px 129.9px 75px;
+
+    &:nth-child(1) {
+      transform: translateX(-65px) rotateX(30deg) rotateY(19.5deg) rotateZ(-30deg);
+    }
+    &:nth-child(2) {
+      transform: translateX(-65px) rotateX(-90deg) rotateY(90deg) rotateZ(90deg);
+    }
+    &:nth-child(3) {
+      transform: translateX(-65px) rotateX(-30deg) rotateY(-19.5deg) rotateZ(-30deg);
+    }
+    &:nth-child(4) {
+      transform-origin: 50% 50%;
+      transform: translateX(-65px) rotateX(90deg) rotateY(-19deg) rotateZ(-30deg) translateX(20px) translateY(-10px) translateZ(-61px);
+    }
+  }
+}
+
+// triang-prism
+.triang-prism {
+  >div.shape-face {
+    &:nth-child(n):nth-child(-n+4) {
+      transform-origin: 50% 0;
+      border-width: 0 65px 140px 65px;
+    }
+    &:nth-child(1) {
+      transform: rotateX(-27.5deg);
+    }
+    &:nth-child(2) {
+      transform: rotateX(27.5deg);
+    }
+    &:nth-child(3) {
+      transform: rotateZ(27.5deg) rotateY(-90deg);
+    }
+    &:nth-child(4) {
+      transform-origin: 50% 50%;
+      transform: rotateZ(-27.5deg) rotateY(-90deg);
+    }
+    &:nth-child(5) {
+      transform: rotateX(90deg) translateZ(-59px);
+    }
+  }
+}
+
+// cube
+.cube {
+  >div.shape-face {
+    &:nth-child(1) {
+      transform: translateZ(65px);
+    }
+    &:nth-child(2) {
+      transform: rotateY(90deg) translateZ(65px);
+    }
+    &:nth-child(3) {
+      transform: rotateY(180deg) translateZ(65px);
+    }
+    &:nth-child(4) {
+      transform: rotateY(-90deg) translateZ(65px);
+    }
+    &:nth-child(5) {
+      transform: rotateX(90deg) translateZ(65px);
+    }
+    &:nth-child(6) {
+      transform: rotateX(-90deg) translateZ(65px);
+    }
+  }
+}
+
+// octahedron
+.octahedron {
+  >div.shape-face {
+    &:nth-child(n):nth-child(-n+8) {
+      transform-origin: 50% 0;
+      border-width: 0 65px 90px 65px;
+    }
+    &:nth-child(1) {
+      transform: rotateX(-46deg);
+    }
+    &:nth-child(2) {
+      transform: rotateX(46deg);
+    }
+    &:nth-child(3) {
+      transform: rotateZ(46deg) rotateY(-90deg);
+    }
+    &:nth-child(4) {
+      transform-origin: 50% 50%;
+      transform: rotateZ(-46deg) rotateY(-90deg);
+    }
+    &:nth-child(5) {
+      transform: translateY(126px) rotateX(225deg);
+    }
+    &:nth-child(6) {
+      transform: translateY(126px) rotateX(-225deg);
+    }
+    &:nth-child(7) {
+      transform: rotateX(-215deg) rotateZ(90deg) rotateY(55deg) rotateX(44deg) translateY(-87px) translateZ(-90px);
+    }
+    &:nth-child(8) {
+      transform-origin: 50% 50%;
+      transform: rotateX(-215deg) rotateZ(-90deg) rotateY(-55deg) rotateX(44deg) translateY(-87px) translateZ(-90px);
+    }
+  }
+}
