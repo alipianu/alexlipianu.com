@@ -15,7 +15,7 @@ const SkillsContainer = (props) => {
     <Section theme="dark" title={props.title} description={props.description}>
       <Collapsible.Grid className="grid-skills">
         {props.groups.map((group) => (
-          [<h6>{group.name}</h6>, ...[...Array(Math.ceil(group.data.length / entriesPerRow)).keys()].map((row) => {
+          [<h6>{group.name}:</h6>, ...[...Array(Math.ceil(group.data.length / entriesPerRow)).keys()].map((row) => {
             const start = row * entriesPerRow;
             return (
               <Collapsible.Row key={row}>

@@ -2,6 +2,8 @@ import './loader.scss';
 import React from 'react';
 import classnames from 'classnames';
 
+const defaultError = 'An unexpected error has occured';
+
 /**
  * Loader component
  * 
@@ -49,7 +51,7 @@ class Loader extends React.Component {
       }
       dots = [<span key={i} className={classnames('loader-text', !visible ? 'hidden' : '')}>.</span>, ...dots];
     }
-    return <><span className="loader-text">Loading</span>{dots}</>;
+    return <><span className="loader-text">LOADING</span>{dots}</>;
   }
 
   /**
@@ -60,7 +62,7 @@ class Loader extends React.Component {
       this.props.children :
       <div className={classnames('loader', this.state.error ? 'error' : '', this.state.loaded ? 'loaded' : 'loading')}>
         {this.props.animation && (
-          React.createElement(this.props.animation, { title: this.state.error ? <span className="loader-text">ERROR: An error occured</span> : this.loadingText() }))}
+          React.createElement(this.props.animation, { title: this.state.error ? <><h2 className="loader-text">ERROR:</h2><p className="loader-text">{this.props.errorMessage ? this.props.errorMessage : defaultError}</p></> : <h2>{this.loadingText()}</h2> }))}
       </div>
   }
 }

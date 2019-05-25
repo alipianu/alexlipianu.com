@@ -1,18 +1,21 @@
+@import '../../_shared';
+
+// local variables
+$tag-border-width: 1px;
+$tag-margin: 2px;
+$tag-border-radius: 5px;
+$tag-padding: 8px;
+
 div.tag {
+  @extend %non-selectable;
   color: #FFF;
   display: inline-block;
-  border: 1px solid;
-  margin: 2px;
-  border-radius: 5px;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  border: $tag-border-width solid;
+  margin: $tag-margin;
+  border-radius: $tag-border-radius;
 
   span {
-    padding: 0 8px 0 8px;
-    width: 100%;
+    padding: 0 $tag-padding 0 $tag-padding;
   }
 
   &:hover span {

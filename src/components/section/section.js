@@ -17,7 +17,7 @@ const Section = (props) => (
       {!props.headshot ? props.children : (
         <Row className="align-items-center">
           <Col md={5} lg={4}>
-            <img id="headshot" src={props.headshot} className="img-responsive img-fluid rounded-circle" alt="headshot" />
+            <img src={props.headshot} className="headshot" alt="headshot" />
           </Col>
           <Col md={6} lg={7} className="offset-md-1">
             {props.children}

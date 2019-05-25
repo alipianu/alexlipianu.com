@@ -1,11 +1,17 @@
 
 
+@import '../../_shared';
+
+// local variables
+$cursor-width: .15em;
+
 .track-visible {
   .typewrite {
+    @extend %non-selectable;
     width: 0;
-    color: #17A2B8;
+    color: $theme-accent;
     overflow: hidden;
-    border-right: .15em solid #17A2B8;
+    border-right: $cursor-width solid $theme-accent;
     white-space: nowrap;
     float: left;
     transition: width 3s;
@@ -14,12 +20,11 @@
 
   &.was-visible {
     .typewrite {
-      @keyframes blink-caret {
+      @include keyframes(blink-caret) {
         from, to { border-color: transparent }
-        50% { border-color: #17A2B8 }
+        50% { border-color: $theme-accent }
       }
-    
-      animation: blink-caret .75s step-end infinite;
+      @include animation(blink-caret .75s step-end infinite);
     }
   }
 }

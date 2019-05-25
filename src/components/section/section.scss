@@ -1,18 +1,24 @@
+@import '../../_shared';
+
+// local variables
+$section-spacing: 50px;
+$headshot-spacing-bottom: 30px;
+
 section {
-  padding: 50px 0 100px 0;
+  padding: $section-spacing 0 $section-spacing 0;
   overflow: hidden;
 
   &.dark {
-    background-color: #262626;
-    color: #FFF;
+    @extend %theme-dark-background;
   }
 
   &.light {
-    background-color: #FFF;
-    color: #000;
+    @extend %theme-light-background;
   }
 
-  #headshot {
-    margin-bottom: 30px;
+  .headshot {
+    @extend %non-selectable;
+    @include circle(100%);
+    margin-bottom: $headshot-spacing-bottom;
   }
 }

@@ -1,0 +1,133 @@
+// shared scss variables
+$theme-accent: #17A2B8;
+$theme-light: #FFF;
+$theme-dark: #262626;
+
+// mixins
+@mixin fa-pseudo($icon) {
+  @extend %pseudo;
+  content: $icon;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+@mixin size($size) {
+  width: $size;
+  height: $size;
+}
+
+@mixin circle($diameter) {
+  @include size($diameter);
+  border-radius: 50%;
+}
+
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+      -ms-transform: $transform;
+          transform: $transform;
+}
+
+@mixin transformOrigin($origin) {
+  -webkit-transform-origin: $origin;
+     -moz-transform-origin: $origin;
+      -ms-transform-origin: $origin;
+          transform-origin: $origin;
+}
+
+@mixin transformStyle($style) {
+  -webkit-transform-style: $style;
+     -moz-transform-style: $style;
+          transform-style: $style;
+}
+
+@mixin animation($animation) {
+  -webkit-animation: $animation;
+     -moz-animation: $animation;
+          animation: $animation;
+}
+
+@mixin perspective($perspective) {
+  -webkit-perspective: $perspective;
+     -moz-perspective: $perspective;
+          perspective: $perspective;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+
+@mixin fade-text($name, $startColor: null, $endColor: null) {
+  @include keyframes($name) {
+    from {
+      @if $startColor { color: $startColor }
+    }
+    to {
+      @if $endColor { color: $endColor }
+    }
+  }
+}
+
+@mixin fade-body-text($name, $startColor: null, $endColor: null, $startBgColor: null, $endBgColor: null) {
+  @include keyframes($name) {
+    from {
+      @if $startColor { color: $startColor }
+      @if $startBgColor { background-color: $startBgColor }
+    }
+    to {
+      @if $endColor { color: $endColor }
+      @if $endBgColor { background-color: $endBgColor }
+    }
+  }
+}
+
+@mixin stripe-background($angle, $width, $light, $dark) {
+  background-image: repeating-linear-gradient($angle, $light, $light $width, $dark $width, $dark (2 * $width));
+}
+
+
+// base properties
+%pseudo {
+  position: absolute;
+  content: '';
+}
+
+%hoverable {
+  cursor: pointer;
+}
+
+%center-fixed {
+  @include transform(translate(-50%, -50%));
+  position: fixed;
+  top: 50%;
+  left: 50%;
+}
+
+%theme-light-background {
+  color: $theme-dark;
+  background-color: $theme-light;
+}
+
+%theme-dark-background {
+  color: $theme-light;
+  background-color: $theme-dark;
+}
+
+%non-selectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+%text-centered {
+  text-align: center;
+}

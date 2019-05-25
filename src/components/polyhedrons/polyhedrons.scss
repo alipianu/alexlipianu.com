@@ -1,16 +1,15 @@
+@import '../../_shared';
+
+// local variables
+$shape-size: 130px;
+$perspective: 300px;
+
 div.scene {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  top: 50%;
-  left: 50%;
+  @extend %center-fixed;
 
   >div.shapes {
-    width: 130px;
-    height: 130px;
-    perspective: 300px;
-  }
-
-  >h3 {
-    margin-top: 40px;
+    @include size($shape-size);
+    @include perspective($perspective);
+    margin: auto;
   }
 }

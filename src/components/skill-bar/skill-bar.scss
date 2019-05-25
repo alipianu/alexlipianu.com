@@ -1,120 +1,69 @@
-.skill {
+@import '../../_shared';
+
+// local variables
+$skill-bar-height: 18px;
+$skill-bar-border-width: 2px;
+$skill-bar-border-color: #000;
+$skill-bar-background-color: #FFF;
+$skill-bar-stripe-angle: -45deg;
+$skill-bar-stripe-width: 5px;
+$skill-novice-light: hsl(16, 100%, 50%);
+$skill-novice-dark: hsl(16, 100%, 40%);
+$skill-intermediate-light: hsl(39, 100%, 50%);
+$skill-intermediate-dark: hsl(39, 100%, 40%);
+$skill-advanced-light: hsl(60, 100%, 50%);
+$skill-advanced-dark: hsl(60, 100%, 40%);
+$skill-expert-light: hsl(84, 100%, 50%);
+$skill-expert-dark: hsl(84, 100%, 40%);
+
+div.skill {
+  @extend %non-selectable;
 	text-align: center;
   
-  >.skill-bar {
-    width: 100%;
-    height: 18px;
-    border: 2px solid black;
-    border-radius: 20px;
+  >div.skill-bar {
+    height: $skill-bar-height;
+    border: $skill-bar-border-width solid $skill-bar-border-color;
+    border-radius: $skill-bar-height;
     overflow: hidden;
-    background-color: white;
+    background-color: $skill-bar-background-color;
 
-    >.skill-bar-bg {
-      display: inline-block;
-      height: 100%;
-      background-color: white;
-      bottom: 3px;
-      width: inherit;
-      transition: width 1.5s;
-      transition-timing-function: ease-out;
-    }
-
-    >.skill-bar-progress {
+    >div {
       float: left;
       height: 100%;
-      width: 0%;
-      transition: width 1.5s;
-      transition-timing-function: ease-out;
+      transition: width 1.5s ease-out;
 
       &:after {
         content: '';
         position: relative;
         display: inline-block;
-        height: 110%;
-        width: 2px;
-        background-color: black;
+        height: calc(100% + 2px);
+        width: $skill-bar-border-width;
+        background-color: $skill-bar-border-color;
         left: calc(50% + 1px);
-        bottom: 4px;
+        bottom: 2 * $skill-bar-border-width;
       }
     }
   }
 
-  // Skill bar (novice)
-  &.skill-novice {
-    .skill-bar-progress {
-      background-image:
-        repeating-linear-gradient(
-          -45deg, 
-          hsl(16, 100%, 50%),
-          hsl(16, 100%, 50%) 5px, 
-          hsl(16, 100%, 40%) 5px, 
-          hsl(16, 100%, 40%) 10px);
-    }
+  // Skill bar custom styling
+  &.skill-novice > div.skill-bar > div {
+    @include stripe-background($skill-bar-stripe-angle, $skill-bar-stripe-width, $skill-novice-light, $skill-novice-dark)
   }
-
-  // Skill bar (intermediate)
-  &.skill-intermediate {
-    .skill-bar-progress {
-      background-image:
-        repeating-linear-gradient(
-          -45deg,
-          hsl(39, 100%, 50%), 
-          hsl(39, 100%, 50%) 5px,
-          hsl(39, 100%, 40%) 5px,
-          hsl(39, 100%, 40%) 10px);
-    }
+  &.skill-intermediate > div.skill-bar > div {
+    @include stripe-background($skill-bar-stripe-angle, $skill-bar-stripe-width, $skill-intermediate-light, $skill-intermediate-dark);
   }
-
-  // Skill bar (advanced)
-  &.skill-advanced {
-    .skill-bar-progress {
-      background-image:
-        repeating-linear-gradient(
-          -45deg,
-          hsl(60, 100%, 50%), 
-          hsl(60, 100%, 50%) 5px,
-          hsl(60, 100%, 40%) 5px,
-          hsl(60, 100%, 40%) 10px);
-    }
+  &.skill-advanced > div.skill-bar > div {
+    @include stripe-background($skill-bar-stripe-angle, $skill-bar-stripe-width, $skill-advanced-light, $skill-advanced-dark);
   }
-
-  // Skill bar (expert)
-  &.skill-expert {
-    .skill-bar-progress {
-      background-image:
-        repeating-linear-gradient(
-          -45deg,
-          hsl(84, 100%, 59%), 
-          hsl(84, 100%, 59%) 5px,
-          hsl(84, 100%, 39%) 5px,
-          hsl(84, 100%, 39%) 10px);
-    }
+  &.skill-expert > div.skill-bar > div {
+    @include stripe-background($skill-bar-stripe-angle, $skill-bar-stripe-width, $skill-expert-light, $skill-expert-dark);
   }
 }
 
 // Skill bar animations
-.track-visible.was-visible .skill {
-  // Skill bar (novice)
-  &.skill-novice {
-    .skill-bar-bg { width: 75%; }
-    .skill-bar-progress { width: 25%; }
-  }
-
-  // Skill bar (intermediate)
-  &.skill-intermediate {
-    .skill-bar-bg { width: 50%; }
-    .skill-bar-progress { width: 50%; }
-  }
-
-  // Skill bar (advanced)
-  &.skill-advanced {
-    .skill-bar-bg { width: 25%; }
-    .skill-bar-progress { width: 75%; }
-  }
-
-  // Skill bar (expert)
-  &.skill-expert {
-    .skill-bar-bg { width: 0%; }
-    .skill-bar-progress { width: 100%; }
-  }
+.track-visible.was-visible div.skill {
+  &.skill-novice > div.skill-bar > div { width: 25%; }
+  &.skill-intermediate > div.skill-bar > div { width: 50%; }
+  &.skill-advanced > div.skill-bar > div { width: 75%; }
+  &.skill-expert > div.skill-bar > div { width: 100%; }
 }

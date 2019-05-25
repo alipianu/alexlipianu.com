@@ -17,7 +17,7 @@ import {
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { data: null };
+    this.state = { data: null, errorMessage: 'api.alexlipianu.com is currently unavailable or cannot be reached' };
     this.loader = this.loader.bind(this);
     this.onSuccess = this.onSuccess.bind(this);
   }
@@ -49,7 +49,7 @@ class App extends React.Component {
    */
   render() {
     return (
-      <Loader loader={this.loader} animation={LoadingAnimation} onSuccess={this.onSuccess} onError={this.onError}>
+      <Loader loader={this.loader} animation={LoadingAnimation} onSuccess={this.onSuccess} onError={this.onError} errorMessage={this.state.errorMessage}>
         {this.state.data && <>
           <SplashContainer {...this.state.data.splash} />
           <AboutContainer {...this.state.data.about} />

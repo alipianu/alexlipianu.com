@@ -1,7 +1,10 @@
+@import '../../../_shared';
+
 div.head-collapse {
-  &.has-body {
-    cursor: pointer;
-  }
-  text-align: center;
+  @extend %text-centered;
   padding: 1em;
+
+  &.has-body {
+    @extend %hoverable;
+  }
 }

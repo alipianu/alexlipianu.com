@@ -1,16 +1,21 @@
+@import '../../_shared';
+
+// local variables
+$inner-padding: 5px;
+$outer-padding: 15px;
+
 footer {
-  text-align: center;
-  background-color: #262626;
-  color: #FFF;
+  @extend %text-centered;
+  @extend %theme-dark-background;
 
   div {
-    padding: 5px 0 5px 0;
+    padding: $inner-padding 0 $inner-padding 0;
     
     &:first-child {
-      padding-top: 15px;
+      padding-top: $outer-padding;
     }
     &:last-child {
-      padding-bottom: 15px;
+      padding-bottom: $outer-padding;
     }
 
     p {
@@ -18,7 +23,7 @@ footer {
     }
   
     .footer-button {
-      @media screen and (max-width:475px) {
+      @media screen and (max-width: 475px) {
         margin: 0;
       }
     }

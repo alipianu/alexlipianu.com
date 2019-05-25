@@ -1,54 +1,48 @@
-.grid-skills {
-  @keyframes animateSkill {
-    0% { background-position: 0 0; }
-    100% { background-position: 0 100px; }
-  }
-  @keyframes transitionExpandedDark {
-    to { background-color: #FFF; color: #262626; }
-  }
+@import '../../_shared';
 
+// local variables
+$skill-novice-light: hsl(16, 100%, 50%);
+$skill-intermediate-light: hsl(39, 100%, 50%);
+$skill-advanced-light: hsl(60, 100%, 50%);
+$skill-expert-light: hsl(84, 100%, 50%);
+
+@include keyframes(animate-skill) {
+  from { background-position: 0 0; }
+  to { background-position: 0 100px; }
+}
+@include fade-body-text(transition-expand-dark, null, $theme-dark, null, $theme-light);
+
+.grid-skills {
   .head-collapse.has-body {
     .skill {
-      .label {
-        &:after {
-          margin-left: 5px;
-          position: absolute;
-          font-family: "Font Awesome 5 Free";
-          content: "\f0d7";
-          font-weight: 900;
-        }
+      .label:after {
+        @include fa-pseudo("\f0d7");
+        margin-left: 5px;
       }
     }
 
     &.expanded {
-      animation: transitionExpandedDark .5s ease-in-out 0s alternate forwards;
+      @include animation(transition-expand-dark .5s ease-in-out 0s alternate forwards);
       .skill {
         .label {
-          transform: scale(1.1);
+          @include transform(scale(1.1));
           &:after {
-            animation: animateToggle .2s linear 0s alternate forwards;
+            @include animation(animate-toggle .2s linear 0s alternate forwards);
           }
         }
         .skill-bar-progress {
-          animation: animateSkill 2s linear infinite;
+          @include animation(animate-skill 2s linear infinite);
         }
       }
     }
 
-    &:not(.expanded) {
-      &:hover {
-        .skill {
-          &.skill-novice .label { color: hsl(16, 100%, 50%) }
-          &.skill-intermediate .label { color: hsl(39, 100%, 50%) }
-          &.skill-advanced .label { color: hsl(60, 100%, 50%) }
-          &.skill-expert .label { color: hsl(84, 100%, 59%) }
-          .label {
-            animation: growtext .5s ease-in-out 0s alternate forwards;
-          }
-          .skill-bar-progress {
-            animation: animateSkill 2s linear infinite;
-          }
-        }
+    &:not(.expanded):hover .skill {
+      &.skill-novice .label { color: $skill-novice-light; }
+      &.skill-intermediate .label { color: $skill-intermediate-light; }
+      &.skill-advanced .label { color: $skill-advanced-light; }
+      &.skill-expert .label { color: $skill-expert-light; }
+      .label {
+        @include animation(grow-text .5s ease-in-out 0s alternate forwards);
       }
     }
   }
@@ -56,7 +50,7 @@
   .body-collapse {
     padding: 20px;
     &.expanded {
-      animation: transitionExpandedDark .5s ease-in-out 0s alternate forwards;
+      @include animation(transition-expand-dark .5s ease-in-out 0s alternate forwards);
     }
   }
 }

@@ -11,10 +11,7 @@ import { Hoc } from '../components';
 const SkillBar = (props) => (
   <div className={`skill skill-${props.level || 'none'}`}>
     {props.label && <div className="label">{props.label}</div>}
-    <div className="skill-bar">
-      <div className="skill-bar-bg"></div>
-      <div className="skill-bar-progress"></div>
-    </div>
+    <div className="skill-bar"><div></div></div>
   </div>
 );
 
