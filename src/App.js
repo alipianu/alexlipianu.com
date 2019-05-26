@@ -26,13 +26,14 @@ class App extends React.Component {
    * Fetch app data
    */
   loader() {
-    return fetch('https://api.alexlipianu.com/sections').then((response) => response.json().data);
+    return fetch('https://api.alexlipianu.com/sections').then((response) => response.json());
   }
 
   /**
    * Load data into containers
    */
   onSuccess(result) {
+   result = result.data;
     const data = {};
     const sections = ['splash', 'about', 'timeline', 'skills', 'experience', 'projects', 'pens'];
     sections.forEach((section) => {
