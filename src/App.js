@@ -26,7 +26,7 @@ class App extends React.Component {
    * Fetch app data
    */
   loader() {
-    return fetch('https://api.alexlipianu.com').then((response) => response.json());
+    return fetch('https://api.alexlipianu.com/sections').then((response) => response.json());
   }
 
   /**
