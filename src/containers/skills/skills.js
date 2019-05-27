@@ -20,7 +20,10 @@ const SkillsContainer = (props) => {
             return (
               <Collapsible.Row key={row}>
                 {group.data.slice(start, start + entriesPerRow).map((skill, col) => (
-                  <Collapsible.Col key={col} md={colWidth} body={skill.details}>
+                  <Collapsible.Col key={col} md={colWidth} body={
+                    !Array.isArray(skill.details) || !skill.details.length ? skill.details :
+                      <ul>{skill.details.map((detail, i) => <li key={i}>{detail}</li>)}</ul>
+                  }>
                     <SkillBar label={skill.label} level={skill.level} />
                   </Collapsible.Col>
                 ))}
