@@ -6,7 +6,7 @@ import { Section, Collapsible, SkillBar } from '../../components/components';
  * Renders skills section
  * @param {*} props the component's properties
  * 
- * usage: <SkillsContainer entriesPerRow?="X" title="X" description="Y" groups={[{name: 'Z', data: [...]}, ...]} />
+ * usage: <SkillsContainer analytics={['W', ...]} entriesPerRow?="X" title="X" description="Y" groups={[{name: 'Z', data: [...]}, ...]} />
  */
 const SkillsContainer = (props) => {
   // analytics tags

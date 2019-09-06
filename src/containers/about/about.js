@@ -5,7 +5,7 @@ import { Section, Typewrite, Paragraph } from '../../components/components';
  * Renders about section
  * @param {*} props the component's properties
  * 
- * usage: <AboutContainer title="U" headshot="V" message?={{width?: 'W', text?: 'X'}} description?={{links: ['Y', ...], text?: 'Z'}} />
+ * usage: <AboutContainer analytics={['T', ...]} title="U" headshot="V" message?={{width?: 'W', text?: 'X'}} description?={{links: ['Y', ...], text?: 'Z'}} />
  */
 const AboutContainer = (props) => {
   // analytics tags

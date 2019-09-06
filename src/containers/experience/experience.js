@@ -7,7 +7,7 @@ import { Section, Collapsible } from '../../components/components';
  * Renders experience section
  * @param {*} props the component's properties
  * 
- * usage: <ExperienceContainer title="V" description="W" data={[{details: 'X', icon: 'Y', label?: 'Z'}, ...]} />
+ * usage: <ExperienceContainer analytics={['U', ...]} title="V" description="W" data={[{details: 'X', icon: 'Y', label?: 'Z'}, ...]} />
  */
 const ExperienceContainer = (props) => {
   // analytics tags

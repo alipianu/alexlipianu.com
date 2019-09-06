@@ -6,7 +6,7 @@ import { Section, Project } from '../../components/components';
  * Renders projects section
  * @param {*} props the component's properties
  * 
- * usage: <ProjectsContainer entriesPerRow?={X} title="Y" description="Z" data={{projects: [...], tagMap: ...}} />
+ * usage: <ProjectsContainer analytics={['W', ...]} entriesPerRow?={X} title="Y" description="Z" data={{projects: [...], tagMap: ...}} />
  */
 
  const ProjectsContainer = (props) => {

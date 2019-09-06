@@ -6,7 +6,7 @@ import { Section, Codepen } from '../../components/components';
  * Renders pens section
  * @param {*} props the component's properties
  * 
- * usage: <PensContainer title="V" description="W" entriesPerRow?={X} data?={[{hash: "Y", title: "Z" }, ...]} />
+ * usage: <PensContainer analytics={['U', ...]} title="V" description="W" entriesPerRow?={X} data?={[{hash: "Y", title: "Z" }, ...]} />
  */
 const PensContainer = (props) => {
   // analytics tags
