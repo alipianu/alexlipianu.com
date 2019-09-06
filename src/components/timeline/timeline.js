@@ -9,7 +9,7 @@ const defaultData = {
 
 /**
  * Renders timeline component
- * @param {*} props - the component's properties
+ * @param {*} props the component's properties
  * 
  * usage: <Timeline data={[{year?: 'X', color?: 'Y', entries: [{shape: ('circle' || *), content: 'Z'}, ...]}]} />
  */

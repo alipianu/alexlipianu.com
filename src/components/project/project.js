@@ -5,7 +5,7 @@ import { IconButton, Tag } from '../components';
 
 /**
  * Renders project component
- * @param {*} props - the component's properties
+ * @param {*} props the component's properties
  * 
  * usage: <Project image?="R" title?="S" description?="T" links?={{download?: 'U', github?: 'V'}} tools?={{..., W: ['X', ...]}} tagMap={{..., W: {color?: 'Y', accent?: 'Z'}}} />
  */

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 /**
  * Renders icon button component
- * @param {*} props - the component's properties
+ * @param {*} props the component's properties
  * 
  * usage: <IconButton ariaLabel?="X" href?="Y" icon="Z" />
  */

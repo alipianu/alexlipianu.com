@@ -3,7 +3,7 @@ import Link from '../../components/link/link';
 
 /**
  * Renders paragraph component, for safely rendering text data with urls
- * @param {*} props - the component's properties
+ * @param {*} props the component's properties
  * 
  * usage: <Paragraph links=['X', ...]>...</Paragraph>
  */

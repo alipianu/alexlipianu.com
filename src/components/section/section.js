@@ -5,7 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 /**
  * Renders section component
- * @param {*} props - the component's properties
+ * @param {*} props the component's properties
  * 
  * usage: <Section theme?="X" className?="Y" title?="Z" description?="" headshot?="">...</Section>
  */

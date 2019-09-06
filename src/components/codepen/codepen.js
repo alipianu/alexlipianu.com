@@ -3,7 +3,7 @@ import React from 'react';
 
 /**
  * Renders codepen embed
- * @param {*} props - the component's properties
+ * @param {*} props the component's properties
  * 
  * usage: <Codepen height="U" title="V" hash="W" themeId="X" defaultTab="Y" user="Z" />
  */

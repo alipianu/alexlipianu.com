@@ -4,7 +4,7 @@ import { Splash } from '../../components/components';
 
 /**
  * Renders splash section
- * @param {*} props - the component's properties
+ * @param {*} props the component's properties
  * 
  * usage: <SplashContainer name?="X" title?="Y" src="Z" />
  */
