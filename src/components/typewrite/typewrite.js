@@ -4,7 +4,7 @@ import { Hoc } from '../components';
 
 /**
  * Renders typewrite component
- * @param {*} props - the component's properties
+ * @param {*} props the component's properties
  * 
  * usage: <Typewrite width="X%">...</Typewrite>
  */

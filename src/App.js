@@ -1,5 +1,7 @@
 import './App.scss';
 import React from 'react';
+import analytics from './general/analytics';
+import request from './general/request';
 import { Loader, Footer, LoadingAnimation } from './components/components';
 import {
   SplashContainer,
@@ -22,18 +24,26 @@ class App extends React.Component {
     this.onSuccess = this.onSuccess.bind(this);
   }
 
+  componentDidMount() {
+    analytics.start();
+  }
+
+  async componentWillUnmount() {
+    await analytics.end();
+  }
+
   /**
    * Fetch app data
    */
   loader() {
-    return fetch('https://api.alexlipianu.com/sections').then((response) => response.json());
+    return request.get('sections');
   }
 
   /**
    * Load data into containers
    */
   onSuccess(result) {
-   result = result.data;
+    result = result.data;
     const data = {};
     const sections = ['splash', 'about', 'timeline', 'skills', 'experience', 'projects', 'pens'];
     sections.forEach((section) => {
@@ -43,6 +53,13 @@ class App extends React.Component {
       }
     });
     this.setState({ data });
+  }
+
+  /**
+   * Handle server errors
+   */
+  onError(error) {
+    // do nothing right now, TODO
   }
 
   /**

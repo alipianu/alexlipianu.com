@@ -3,7 +3,7 @@ import React from 'react';
 
 /**
  * Renders a link component
- * @param {*} props - the component's properties
+ * @param {*} props the component's properties
  * 
  * usage: <Link ariaLabel?="W" href?="X" target?="Y" rel?="Z">...</Link>
  */

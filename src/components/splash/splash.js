@@ -3,7 +3,7 @@ import React from 'react';
 
 /**
  * Renders splash component
- * @param {*} props - the component's properties
+ * @param {*} props the component's properties
  * 
  * usage: <Splash src="X">...</Splash>
  */

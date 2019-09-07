@@ -2,7 +2,7 @@ import Collapsible from './collapsible/collapsible';
 import Hoc from './components-hoc/hoc';
 import Footer from './footer/footer';
 import Link from './link/link';
-import Paragraph from './paragraph/paragraph';
+import Paragraphs from './paragraphs/paragraphs';
 import Project from './project/project';
 import Section from './section/section';
 import SkillBar from './skill-bar/skill-bar';
@@ -14,6 +14,7 @@ import Tag from './tag/tag';
 import Codepen from './codepen/codepen';
 import Loader from './loader/loader';
 import LoadingAnimation from './polyhedrons/polyhedrons';
+import { Track } from './track/track';
 
 // Component module
 export {
@@ -21,7 +22,7 @@ export {
   Hoc,
   Footer,
   Link,
-  Paragraph,
+  Paragraphs,
   Project,
   Section,
   SkillBar,
@@ -32,5 +33,6 @@ export {
   Tag,
   Codepen,
   Loader,
-  LoadingAnimation
+  LoadingAnimation,
+  Track
 }
