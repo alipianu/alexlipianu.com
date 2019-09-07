@@ -8,6 +8,5 @@ const get = (path = '') => {
 };
 
 export default {
-  post,
   get
 };
