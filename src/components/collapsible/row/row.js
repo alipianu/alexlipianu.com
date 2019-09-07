@@ -2,6 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import { Row as BootstrapRow } from 'react-bootstrap';
 import Body from '../body/body';
+import analytics from '../../../general/analytics';
 
 /**
  * Row collapsible component
@@ -55,7 +56,7 @@ class Row extends React.Component {
         </BootstrapRow>
         {React.Children.map(this.props.children || [], (child, colId) => (
           child.props.body && (
-            <Body expanded={`${this.props.id}-${colId}` === this.props.expandedId && this.state.isDesktop}>
+            <Body analytics={analytics.decorate(child.props.analytics, {tags: 'desktop > collapsable', name: 'desktop-collapsable'})} expanded={`${this.props.id}-${colId}` === this.props.expandedId && this.state.isDesktop}>
               {child.props.body}
             </Body>
           )

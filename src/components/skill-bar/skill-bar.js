@@ -4,7 +4,7 @@ import { Hoc } from '../components';
 
 /**
  * Renders skillbar component
- * @param {*} props - the component's properties
+ * @param {*} props the component's properties
  * 
  * usage: <SkillBar level?="X" label?="Y" />
  */
