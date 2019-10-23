@@ -62,7 +62,7 @@ div.skill {
 }
 
 // Skill bar animations
-.track-visible.was-visible div.skill {
+.visibility.was-visible div.skill {
   &.skill-novice > div.skill-bar > div { width: 25%; }
   &.skill-intermediate > div.skill-bar > div { width: 50%; }
   &.skill-advanced > div.skill-bar > div { width: 75%; }

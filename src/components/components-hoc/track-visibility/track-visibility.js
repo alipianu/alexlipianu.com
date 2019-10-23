@@ -1,25 +1,9 @@
 import React from 'react';
 import classnames from 'classnames';
-
-// visibility element counter
-let counter = 0;
-
-// Map intersection targetId => updateVisibility callback
-const targetMap = {};
-
-// Create intersection observer
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    const callback = targetMap[entry.target.getAttribute('id')];
-    if (callback) {
-      callback(entry);
-    }
-  });
-});
+import visibility from '../../../general/visibility';
 
 // default tracking options
 const defaultOptions = {
-  threshold: 0,
   unregisterOnIntersect: false
 };
 
@@ -27,60 +11,51 @@ const defaultOptions = {
  * 
  * @param {React.Component} WrappedComponent - the component whose visibility is being tracked 
  * @param {*} options - the tracking options object
- *            options.unregisterOnIntersect - if true, unregisters the element on first intersect (good for components that animate only on first time visible in viewport)
- *            options.threshold - the intersectionRatio threshold that defines if element is intersected
  */
 const trackVisibility = (WrappedComponent, options = {}) => {
   return class Visibility extends React.Component {
     constructor(props) {
       super(props);
+      const ref = React.createRef();
       this.state = {
-        id: `track-visible-${counter++}`,
-        ref: React.createRef(),
-        threshold: options.threshold || defaultOptions.threshold,
+        id: '',
+        ref,
         wasIntersected: false,
         isIntersected: false,
-        unregisterOnIntersect: options.unregisterOnIntersect || defaultOptions.unregisterOnIntersect
+        unregisterOnIntersect: options.unregisterOnIntersect || defaultOptions.unregisterOnIntersect,
+        options: {
+          ...options,
+          enterCallback: this.handleEnterVisibility.bind(this),
+          exitCallback: this.handleExitVisibility.bind(this)
+        }
       }
-      this.updateVisibility = this.updateVisibility.bind(this);
+      this.unregisterTarget = this.unregisterTarget.bind(this);
     }
   
     componentWillUnmount() {
-      this.unregisterTarget();
-    }
-
-    componentDidMount() {
-      this.registerTarget();
+      this.unregisterTarget()
     }
 
     unregisterTarget() {
-      delete targetMap[this.state.id];
-      observer.unobserve(this.state.ref.current);
+      visibility.unregiser(this.state.id);
     }
-  
-    registerTarget() {
-      targetMap[this.state.id] = this.updateVisibility;
-      observer.observe(this.state.ref.current);
+
+    componentDidMount() {
+      this.setState({id: visibility.register(this.state.ref, this.state.options)});
     }
-  
-    updateVisibility(entry) {
-      if (entry.intersectionRatio > this.state.threshold) {
-        if (this.state.unregisterOnIntersect) {
-          this.setState({wasIntersected: true});
-          this.unregisterTarget();
-        }
-        else {
-          this.setState({wasIntersected: true, isIntersected: true});
-        }
-      }
-      else {
-        this.setState({isIntersected: false});
-      }
+
+    handleEnterVisibility() {
+      this.setState({wasIntersected: true});
+      this.state.unregisterOnIntersect ? this.unregisterTarget() : this.setState({isIntersected: true});
+    }
+
+    handleExitVisibility() {
+      this.setState({isIntersected: false});
     }
   
     render() {
       return (
-        <div id={this.state.id} ref={this.state.ref} className={classnames('track-visible', this.state.wasIntersected ? 'was-visible' : '', this.state.isIntersected ? 'is-visible' : '')}>
+        <div id={this.state.id} ref={this.state.ref} className={classnames('visibility', this.state.wasIntersected ? 'was-visible' : '', this.state.isIntersected ? 'is-visible' : '')}>
           <WrappedComponent {...this.props} />
         </div>
       );

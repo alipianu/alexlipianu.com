@@ -5,7 +5,7 @@
 // local variables
 $cursor-width: .15em;
 
-.track-visible {
+.visibility {
   .typewrite {
     @extend %non-selectable;
     width: 0;

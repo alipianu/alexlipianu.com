@@ -17,9 +17,9 @@ class Analytics {
    * @returns {Promise} the session start promise
    */
   start() {
-    if (this.sessionId == null)
-      return request.post('session/start', { version: config.version })
-        .then((sessionId) => this.sessionId = sessionId);
+    // if (!this.sessionId)
+    //   return request.post('session/start', { version: config.version })
+    //     .then((sessionId) => this.sessionId = sessionId);
   }
 
   /**
@@ -27,8 +27,8 @@ class Analytics {
    * @returns {Promise} the session end promise
    */
   end() {
-    if (this.sessionId != null)
-      return request.post('session/end', { data: this.tracking });
+    // if (this.sessionId)
+    //   return request.post('session/end', { data: this.tracking });
   }
 
   /**
@@ -54,7 +54,7 @@ class Analytics {
    */
   record(event, id, amount = 1) {
     let events = this.tracking[id].events;
-    events[event] = (events[event]) ? events[event] + amount : amount;
+    events[event] = events[event] ? events[event] + amount : amount;
   }
 
 
@@ -62,7 +62,7 @@ class Analytics {
    * Decorate existing analytics object
    * @param {obj} parentAnalytics the parent's analytics
    * @param {obj} childAnalytics the child's analytics
-   * @param {Array<obj>||obj} events the events to track
+   * @param {Array<string>||string} events the events to track
    */
   decorate(parentAnalytics = {}, childAnalytics = {}, events = null) {
     return {

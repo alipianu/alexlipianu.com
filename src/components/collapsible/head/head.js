@@ -11,8 +11,11 @@ import { Track, events } from '../../track/track';
  */
 const Head = React.forwardRef((props, ref) => (
   <Track analytics={analytics.decorate(props.analytics, {tags: 'head', name: 'head'}, [events.visibility, events.hover, events.clicks])}>
-    <div ref={ref} className={classnames('head-collapse', (props.body ? 'has-body' : ''), (props.id === props.expandedId ? 'expanded' : ''))} onClick={() => props.body && props.onToggle(props.id)}>
-      {props.children}
+    {/* note: wrapped in empty div because Track component overrides the onClick handler of children */}
+    <div>
+      <div ref={ref} className={classnames('head-collapse', (props.body ? 'has-body' : ''), (props.id === props.expandedId ? 'expanded' : ''))} onClick={() => props.body && props.onToggle(props.id)}>
+        {props.children}
+      </div>
     </div>
   </Track>
 ));

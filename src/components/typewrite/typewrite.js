@@ -12,7 +12,7 @@ const Typewrite = (props) => (
   <>
     {React.Children.map(props.children, child => (React.cloneElement(child, { className: 'typewrite' })))}
     <style dangerouslySetInnerHTML={{__html: `
-      .track-visible.was-visible .typewrite {
+      .visibility.was-visible .typewrite {
         width: ${props.width || '100%'};
       }
     `}} />
