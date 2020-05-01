@@ -10,7 +10,10 @@ const defaultError = 'An unexpected error has occured';
  * usage: <Loader loader?={W} animation?={X} onSuccess={Y} onError={Z}>...</Loader>
  */
 class Loader extends React.Component {
-  state = { elapsed: 0, maxDots: 4, loaded: false, error: null };
+  constructor(props) {
+    super(props);
+    this.state = { elapsed: 0, maxDots: 4, loaded: false, error: null };
+  }
 
   /**
    * Loads data
@@ -30,7 +33,7 @@ class Loader extends React.Component {
           if (this.props.onError) {
             this.props.onSuccess(error);
           }
-          this.setState({ error });
+          this.setState({ error }, () => clearInterval(loadingTextInterval));
         }
       );
     } else {

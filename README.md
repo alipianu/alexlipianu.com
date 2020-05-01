@@ -1,2 +1,2 @@
-# alipianu.github.io
+# alexlipianu.com
 My personal website.

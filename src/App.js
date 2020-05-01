@@ -1,5 +1,6 @@
 import './App.scss';
 import React from 'react';
+import { Static } from './models/models';
 import { Loader, Footer, LoadingAnimation } from './components/components';
 import {
   SplashContainer,
@@ -15,6 +16,8 @@ import {
  * App component
  */
 class App extends React.Component {
+  _contentID = 0;
+
   constructor(props) {
     super(props);
     this.state = { data: null, errorMessage: 'api.alexlipianu.com is currently unavailable or cannot be reached' };
@@ -26,23 +29,14 @@ class App extends React.Component {
    * Fetch app data
    */
   loader() {
-    return fetch('https://api.alexlipianu.com/sections').then((response) => response.json());
+    return Static.getContent(this._contentID);
   }
 
   /**
    * Load data into containers
    */
-  onSuccess(result) {
-   result = result.data;
-    const data = {};
-    const sections = ['splash', 'about', 'timeline', 'skills', 'experience', 'projects', 'pens'];
-    sections.forEach((section) => {
-      const sectionData = result.find((x) => x._id === section);
-      if (sectionData) {
-        data[section] = sectionData;
-      }
-    });
-    this.setState({ data });
+  onSuccess({data}) {
+    this.setState({data});
   }
 
   /**
@@ -50,7 +44,7 @@ class App extends React.Component {
    */
   render() {
     return (
-      <Loader loader={this.loader} animation={LoadingAnimation} onSuccess={this.onSuccess} onError={this.onError} errorMessage={this.state.errorMessage}>
+      <Loader loader={this.loader} animation={LoadingAnimation} onSuccess={this.onSuccess} errorMessage={this.state.errorMessage}>
         {this.state.data && <>
           <SplashContainer {...this.state.data.splash} />
           <AboutContainer {...this.state.data.about} />
