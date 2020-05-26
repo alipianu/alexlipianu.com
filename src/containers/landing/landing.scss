@@ -1,0 +1,79 @@
+@import '../../_shared';
+
+.container-landing {
+  $self:&;
+
+  #{ $self }__headshot {
+    @include circle-fluid(20, 25, vw);
+    @extend %non-selectable;
+    background-color: #ffffff;
+    border: 0.35rem solid #262626;
+    z-index: 2;
+    position: relative;
+    display: inline-block;
+    margin: auto;
+    vertical-align: middle;
+  }
+
+  #{ $self }__info {
+    vertical-align: middle;
+    display: inline-block;
+    margin: 0 0 0 1.5rem;
+  }
+
+  #{ $self }__name {
+    line-height: 1;
+    margin: 0.5rem 0 0.5rem 0;
+  }
+
+  #{ $self }__title {
+    line-height: 1;
+    margin: 0;
+  }
+
+  .ribbon--right {
+    #{ $self }__status {
+      z-index: 1;
+      padding-left: 3rem;
+      left: -3rem;
+    }
+  }
+
+  #{ $self }__status {
+    margin: 1rem 0 0.5rem 0;
+  }
+
+  @media screen and (max-width: 1200px) {
+    #{ $self }__headshot {
+      @include circle-fluid(25, 30, vw);
+    }
+  }
+
+  // transition to mobile view
+  @media screen and (max-width: 825px) {
+    text-align: center;
+
+    #{ $self }__headshot {
+      @include circle-fluid(20, 25, vw);
+      border-width: 0.25rem;
+    }
+
+    #{ $self }__info {
+      display: block;
+      margin: 0;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    #{ $self }__headshot {
+      @include circle-fluid(30, 35, vw);
+    }
+  }
+
+  // hide headshot if screen height too small (ie. portrait on mobile)
+  @media screen and (max-width: 825px) and (max-height: 450px) {
+    #{ $self }__headshot {
+      display: none;
+    }
+  }
+}

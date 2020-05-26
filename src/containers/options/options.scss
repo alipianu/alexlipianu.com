@@ -1,0 +1,26 @@
+@import '../../_shared';
+
+.container-options {
+  text-align: center;
+
+  h1 {
+    display: inline-block;
+  }
+
+  @media screen and (max-width: 350px) {
+    .toggles--lg {
+      svg {
+        font-size: 2.5em !important;
+      }
+
+      .ribbon {
+        font-size: 0.6rem !important;
+      }
+    }
+  }
+
+  .overflow-scroll__child {
+    max-height: 40vh;
+    max-height: calc(var(--vh, 1vh) * 40); // exact vh for mobile
+  }
+}

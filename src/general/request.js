@@ -1,5 +1,9 @@
 import config from '../config';
 
+// preload cache for assets
+const preloadCache = {};
+const imageRegex = RegExp(/https:\/\/[^"]+\.(jpg|jpeg|png)/g);
+
 /**
  * GET request
  * @param {String} path the request path
@@ -7,10 +11,26 @@ import config from '../config';
  */
 const get = (service = '', path = '') => {
   return fetch(`${config.api}/${service}${path}`, { redirect: 'follow' })
-    .then((response) => {
-      let result = response.json();
-      if (!response.ok) result = result.then((err) => Promise.reject(err));
-      return result;
+    .then((response) => (response.ok) ? response.text() : response.json().then((body) => Promise.reject(body)))
+    .then((text) => {
+      // get json body for result
+      const body = JSON.parse(text);
+
+      // preload any image urls in the body
+      const preload = [];
+      text.match(imageRegex).forEach((url) => {
+        if (!preloadCache[url]) {
+          preloadCache[url] = new Image();
+          preload.push(new Promise((resolve) => {
+            preloadCache[url].onload = () => resolve(url);
+            preloadCache[url].onerror = () => resolve(url);
+          }));
+          preloadCache[url].src = url;
+        }
+      });
+
+      // once all images have been loaded, return JSON result
+      return Promise.all(preload).then(() => Promise.resolve(body));
     });
 };
 

@@ -15,7 +15,7 @@ class Polyhedron extends React.Component {
   }
 
   /**
-   * Renders polyhedron
+   * Renders component
    */
   render() {
     return (

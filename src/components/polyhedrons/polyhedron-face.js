@@ -35,7 +35,7 @@ class PolyhedronFace extends React.Component {
   }
 
   /**
-   * Renders face
+   * Renders component
    */
   render() {
     return (

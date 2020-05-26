@@ -1,18 +1,26 @@
-import AboutContainer from './about/about';
-import ExperienceContainer from './experience/experience';
-import PensContainer from './pens/pens';
-import ProjectsContainer from './projects/projects';
-import SkillsContainer from './skills/skills';
-import SplashContainer from './splash/splash';
-import TimelineContainer from './timeline/timeline';
+import OptionsContainer from './options/options';
+import LandingContainer from './landing/landing';
+import InterestsContainer from './interests/interests';
+import ActivityContainer from './activity/activity';
+import CoursesContainer from './courses/courses';
+import PortfolioContainer from './portfolio/portfolio';
 
-// Container module
+// Containers module
 export {
-    AboutContainer,
-    ExperienceContainer,
-    PensContainer,
-    ProjectsContainer,
-    SkillsContainer,
-    SplashContainer,
-    TimelineContainer
+  OptionsContainer,
+  LandingContainer,
+  InterestsContainer,
+  ActivityContainer,
+  CoursesContainer,
+  PortfolioContainer
+};
+
+// Record<string, Container> exported as default for dynamic container rendering from API
+export default {
+  OptionsContainer,
+  LandingContainer,
+  InterestsContainer,
+  ActivityContainer,
+  CoursesContainer,
+  PortfolioContainer
 };

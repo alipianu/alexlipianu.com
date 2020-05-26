@@ -1,0 +1,25 @@
+@import '../../_shared';
+
+.container-courses {
+  text-align: left;
+  margin-top: 0.5rem;
+
+  &__column {
+    display: inline-block;
+    vertical-align: middle;
+
+    .ribbon {
+      margin: 0.5rem 0.5rem 0 0.5rem;
+    }
+  }
+
+  svg {
+    margin-left: 0.5em;
+  }
+
+  @media screen and (max-width: 710px) {
+    &__column {
+      display: block;
+    }
+  }
+}

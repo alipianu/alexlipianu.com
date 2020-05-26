@@ -1,16 +1,16 @@
 // shared scss variables
-$theme-accent: #17A2B8;
-$theme-light: #FFF;
-$theme-dark: #262626;
+// $theme-accent: #17A2B8;
+// $theme-light: #FFF;
+// $theme-dark: #262626;
+
+$_min-viewport-size: 300; // in px
+$_max-viewport-size: 1600; // in px
+
+
+
+
 
 // mixins
-@mixin fa-pseudo($icon) {
-  @extend %pseudo;
-  content: $icon;
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-}
-
 @mixin size($size) {
   width: $size;
   height: $size;
@@ -21,76 +21,98 @@ $theme-dark: #262626;
   border-radius: 50%;
 }
 
+@mixin fluid($property, $min-size, $max-size, $units, $min-viewport-size: $_min-viewport-size, $max-viewport-size: $_max-viewport-size) {
+  #{$property}: calc(#{$min-size}#{$units} + (#{$max-size} - #{$min-size}) * ((100vw - #{$min-viewport-size}#{$units}) / (#{$max-viewport-size} - #{$min-viewport-size})));
+}
+
+@mixin size-fluid($min-size, $max-size, $units) {
+  @include fluid(width, $min-size, $max-size, $units);
+  @include fluid(height, $min-size, $max-size, $units);
+}
+
+@mixin circle-fluid($min-size, $max-size, $units) {
+  @include size-fluid($min-size, $max-size, $units);
+  border-radius: 50%;
+}
+
+
+// @mixin fa-pseudo($icon) {
+//   @extend %pseudo;
+//   content: $icon;
+//   font-family: "Font Awesome 5 Free";
+//   font-weight: 900;
+// }
+
 @mixin transform($transform) {
   -webkit-transform: $transform;
       -ms-transform: $transform;
           transform: $transform;
 }
 
-@mixin transformOrigin($origin) {
-  -webkit-transform-origin: $origin;
-     -moz-transform-origin: $origin;
-      -ms-transform-origin: $origin;
-          transform-origin: $origin;
-}
+// @mixin transformOrigin($origin) {
+//   -webkit-transform-origin: $origin;
+//      -moz-transform-origin: $origin;
+//       -ms-transform-origin: $origin;
+//           transform-origin: $origin;
+// }
 
-@mixin transformStyle($style) {
-  -webkit-transform-style: $style;
-     -moz-transform-style: $style;
-          transform-style: $style;
-}
+// @mixin transformStyle($style) {
+//   -webkit-transform-style: $style;
+//      -moz-transform-style: $style;
+//           transform-style: $style;
+// }
 
-@mixin animation($animation) {
-  -webkit-animation: $animation;
-     -moz-animation: $animation;
-          animation: $animation;
-}
+// @mixin animation($animation) {
+//   -webkit-animation: $animation;
+//      -moz-animation: $animation;
+//           animation: $animation;
+// }
 
-@mixin perspective($perspective) {
-  -webkit-perspective: $perspective;
-     -moz-perspective: $perspective;
-          perspective: $perspective;
-}
+// @mixin perspective($perspective) {
+//   -webkit-perspective: $perspective;
+//      -moz-perspective: $perspective;
+//           perspective: $perspective;
+// }
 
-@mixin keyframes($name) {
-  @-webkit-keyframes #{$name} {
-    @content; 
-  }
-  @-moz-keyframes #{$name} {
-    @content;
-  }
-  @keyframes #{$name} {
-    @content;
-  } 
-}
+// @mixin keyframes($name) {
+//   @-webkit-keyframes #{$name} {
+//     @content; 
+//   }
+//   @-moz-keyframes #{$name} {
+//     @content;
+//   }
+//   @keyframes #{$name} {
+//     @content;
+//   } 
+// }
 
-@mixin fade-text($name, $startColor: null, $endColor: null) {
-  @include keyframes($name) {
-    from {
-      @if $startColor { color: $startColor }
-    }
-    to {
-      @if $endColor { color: $endColor }
-    }
-  }
-}
+// @mixin fade-text($name, $startColor: null, $endColor: null) {
+//   @include keyframes($name) {
+//     from {
+//       @if $startColor { color: $startColor }
+//     }
+//     to {
+//       @if $endColor { color: $endColor }
+//     }
+//   }
+// }
 
-@mixin fade-body-text($name, $startColor: null, $endColor: null, $startBgColor: null, $endBgColor: null) {
-  @include keyframes($name) {
-    from {
-      @if $startColor { color: $startColor }
-      @if $startBgColor { background-color: $startBgColor }
-    }
-    to {
-      @if $endColor { color: $endColor }
-      @if $endBgColor { background-color: $endBgColor }
-    }
-  }
-}
+// @mixin fade-body-text($name, $startColor: null, $endColor: null, $startBgColor: null, $endBgColor: null) {
+//   @include keyframes($name) {
+//     from {
+//       @if $startColor { color: $startColor }
+//       @if $startBgColor { background-color: $startBgColor }
+//     }
+//     to {
+//       @if $endColor { color: $endColor }
+//       @if $endBgColor { background-color: $endBgColor }
+//     }
+//   }
+// }
 
-@mixin stripe-background($angle, $width, $light, $dark) {
-  background-image: repeating-linear-gradient($angle, $light, $light $width, $dark $width, $dark (2 * $width));
-}
+// @mixin stripe-background($angle, $width, $light, $dark) {
+//   background-image: repeating-linear-gradient($angle, $light, $light $width, $dark $width, $dark (2 * $width));
+// }
 
 
 // base properties
@@ -110,15 +132,15 @@ $theme-dark: #262626;
   left: 50%;
 }
 
-%theme-light-background {
-  color: $theme-dark;
-  background-color: $theme-light;
-}
+// %theme-light-background {
+//   color: $theme-dark;
+//   background-color: $theme-light;
+// }
 
-%theme-dark-background {
-  color: $theme-light;
-  background-color: $theme-dark;
-}
+// %theme-dark-background {
+//   color: $theme-light;
+//   background-color: $theme-dark;
+// }
 
 %non-selectable {
   -webkit-touch-callout: none;

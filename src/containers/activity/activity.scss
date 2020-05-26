@@ -1,0 +1,18 @@
+@import '../../_shared';
+
+.container-activity {
+  text-align: left;
+  margin-top: 0.5em;
+
+  &__row:not(:last-child) {
+    margin: 0 0 1rem 0;
+  }
+
+  &__description {
+    margin: 0;
+  }
+
+  svg {
+    margin-left: 0.4em;
+  }
+}

@@ -1,12 +1,36 @@
 @import '../../_shared';
 
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+
+@mixin fade-text($name, $startColor: null, $endColor: null) {
+  @include keyframes($name) {
+    from {
+      @if $startColor { color: $startColor }
+    }
+    to {
+      @if $endColor { color: $endColor }
+    }
+  }
+}
+
+
 // local variables
 $title-margin-top: 2em;
 
 div.loader {
   @extend %text-centered;
   color: transparent;
-  background-color: $theme-dark;
+  background-color: #262626;
   position: fixed;
   top: 0;
   left: 0;

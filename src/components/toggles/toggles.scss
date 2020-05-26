@@ -1,0 +1,62 @@
+@import '../../_shared';
+
+.toggles {
+  $self:&;
+  text-align: center;
+
+  &__toggle {
+    display: inline-block;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &--sm {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+
+    &#{ $self }--mobile {
+      position: static;
+      display: inline-block;
+      margin-top: 1em;
+    }
+
+    &#{ $self }--hidden {
+      display: none;
+    }
+
+    #{ $self }__toggle {
+      margin-left: 0.15em;
+      margin-right: 0.15em;
+
+      svg {
+        transition: background-color 0.15s;
+        background-color: #262626;
+        color: #fff;
+        padding: 0.5em;
+        width: 1em !important;
+        height: 1em !important;
+      }
+    }
+  }
+
+  &--lg {
+
+    &#{ $self }--hidden {
+      display: none;
+    }
+    
+    #{ $self }__toggle {
+      margin: 1em 1em 0 1em;
+      
+      svg {
+        font-size: 3.5em;
+        padding: 0.25em;
+        width: 1.5em !important;
+        height: 1.5em !important;
+      }
+    }
+  }
+}

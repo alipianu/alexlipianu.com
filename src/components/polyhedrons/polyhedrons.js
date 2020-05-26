@@ -67,14 +67,14 @@ class Polyhedrons extends React.Component {
   }
 
   /**
-   * Destroys animation interval
+   * Clears animation interval
    */
   componentWillUnmount() {
     clearInterval(this.animationInterval);
   }
 
   /**
-   * Renders polyhedrons
+   * Renders component
    */
   render() {
     return (

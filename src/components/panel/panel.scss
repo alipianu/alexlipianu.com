@@ -1,0 +1,29 @@
+@import '../../_shared';
+
+.panel {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100); // exact vh for mobile
+  
+  margin: auto;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  max-width: 65vw;
+
+  &__wrapped {
+    padding: 1em;
+    border-radius: 0.5em;
+    display: inline-block;
+    position: relative;
+    background-color: #fff;
+    box-shadow: 0 0.05em 0.1em 0.075em rgba(0, 0, 0, .3);
+  }
+
+
+  @media screen and (max-width: 1500px) {
+    max-width: 85vw;
+  }
+
+  @media screen and (max-width: 1200px) {
+    max-width: 90vw;
+  }
+}

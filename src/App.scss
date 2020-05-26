@@ -1,11 +1,95 @@
 @import './_shared';
 
+$min-viewport-font-size: 14; // in px
+$max-viewport-font-size: 24; // in px
+
+// @mixin fluid-font($min-viewport-size, $min-viewport-font-size, $max-viewport-size, $max-viewport-font-size) {
+//   font-size: calc(#{$min-viewport-font-size}px + (#{$max-viewport-font-size} - #{$min-viewport-font-size}) * ((100vw - #{$min-viewport-size}px) / (#{$max-viewport-size} - #{$min-viewport-size})));
+// }
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  color: #262626;
+}
+
+body {
+  @include fluid(font-size, $min-viewport-font-size, $max-viewport-font-size, px)
+}
+
+h1 {
+  font-size: 3em;
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  padding: 0;
+  margin: 0;
+}
+
+h3 {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+h6 {
+  font-size: 0.5em;
+  margin: 0;
+}
+
+p {
+  font-size: 1em;
+  margin: 0.25rem;
+}
+
+
+// text formatting
+.format {
+  &__textblock {
+    white-space: nowrap;
+    
+    &:not(:last-child)::after {
+      content: ' ';
+      white-space: normal;
+    }
+  
+    &--bar:not(:last-child)::after {
+      content: ' | ';
+      white-space: normal;
+    }
+  }
+}
+
+
+.animate {
+  &__fade-in-down {
+    animation: fade-in-down 0.75s forwards;
+  }
+}
+
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-1em);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/*
+
 // local variables
 $inner-container-spacing: 40px;
 
 * { z-index: 1; }
 
-/* containers */
+// containers
 div.container {
   >p {
     @extend %text-centered;
@@ -46,3 +130,5 @@ p, li {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
 }
+
+*/

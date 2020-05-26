@@ -1,0 +1,25 @@
+@import '../../_shared';
+
+.container-interests {
+  text-align: left;
+
+  &__column {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+
+  &__icon {
+    margin-right: 0.5rem;
+    width: 1em !important;
+    height: 1em !important;
+  }
+
+  @media screen and (max-width: 710px) {
+    &__column {
+      display: block;
+    }
+  }
+}

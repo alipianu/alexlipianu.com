@@ -1,5 +1,17 @@
 @import '../../_shared';
 
+@mixin transformStyle($style) {
+  -webkit-transform-style: $style;
+     -moz-transform-style: $style;
+          transform-style: $style;
+}
+
+@mixin animation($animation) {
+  -webkit-animation: $animation;
+     -moz-animation: $animation;
+          animation: $animation;
+}
+
 div.shape {
   @include size(100%);
   @include transformStyle(preserve-3d);
