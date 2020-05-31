@@ -6,6 +6,7 @@ import Ribbon from './ribbon/ribbon';
 import Loader from './loader/loader';
 import Polyhedrons from './polyhedrons/polyhedrons';
 import OverflowScroll from './overflow-scroll/overflow-scroll';
+import CookiesPopup from './cookies-popup/cookies-popup';
 
 // Component module
 export {
@@ -15,5 +16,6 @@ export {
   Ribbon,
   Loader,
   Polyhedrons,
-  OverflowScroll
+  OverflowScroll,
+  CookiesPopup
 };

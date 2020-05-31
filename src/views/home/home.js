@@ -1,7 +1,7 @@
 import './home.scss';
 import React from 'react';
 import containers from '../../containers/containers';
-import { Theme, Loader, Polyhedrons } from '../../components/components';
+import { Theme, Loader, Polyhedrons, CookiesPopup } from '../../components/components';
 import { Static } from '../../models/models';
 
 /**
@@ -15,14 +15,17 @@ class Home extends React.Component {
 
   render() {
     return (
-      <Loader animation={Polyhedrons} loader={() => Static.getContent(this._contentID)} onSuccess={({data}) => this.setState({data})}>
-        {this.state.data && (
-          <>
-            <Theme />
-            {this.state.data.containers.map(({name, data}, key) => React.createElement(containers[name], {key, data}))}
-          </>
-        )}
-      </Loader>
+      <>
+        <Loader animation={Polyhedrons} loader={() => Static.getContent(this._contentID)} onSuccess={({ data }) => this.setState({ data })}>
+          {this.state.data && (
+            <>
+              <Theme />
+              {this.state.data.containers.map(({ name, data }, key) => React.createElement(containers[name], { key, data }))}
+            </>
+          )}
+        </Loader>
+        <CookiesPopup />
+      </>
     );
   }
 };

@@ -1,0 +1,46 @@
+.cookies {
+  text-align: center;
+  width: 100%;
+  display: block;
+  position: fixed;
+  bottom: 0;
+  transform: translateY(0.25em);
+  transition: transform 1s;
+
+  &--unaccepted {
+    animation: hide 1s;
+  }
+
+  &--accepted {
+    transform: translateY(calc(100%));
+  }
+
+  &__popup {
+    position: relative;
+    display: inline-block;
+    background-color: #FFAB40;
+    padding: 1rem 1rem;
+    border-radius: 0.25em;
+  }
+
+  &__close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+  }
+
+  &__description {
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+  }
+}
+
+@keyframes hide {
+  from {
+    transform: translateY(calc(100%));
+  }
+  to {
+    transform: translateY(0.25em);
+  }
+}

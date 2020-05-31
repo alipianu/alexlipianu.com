@@ -8,7 +8,6 @@ import particlesData from './particles.json';
 import jump from 'jump.js'
 import { Theme as ThemeModel } from '../../models/models';
 
-
 const ANIMATION_TIME = 400;
 
 /**
