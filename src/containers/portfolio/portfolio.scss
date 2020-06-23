@@ -114,12 +114,13 @@
   }
 
   &__text {
-    margin-top: 2.25em;
+    margin-top: calc(0.5rem + 2em);
   }
 
   &__tools {
     display: inline-block;
-    margin-top: 0.5rem;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
     vertical-align: bottom;
   }
 

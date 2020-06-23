@@ -7,14 +7,38 @@
     display: inline-block;
   }
 
-  @media screen and (max-width: 350px) {
+  @media screen and (max-width: 630px) {
+    .toggles--lg {
+      svg {
+        font-size: 3em !important;
+      }
+
+      .ribbon {
+        font-size: 0.8em !important;
+      }
+    }
+  }
+
+  @media screen and (max-width: 515px) {
     .toggles--lg {
       svg {
         font-size: 2.5em !important;
       }
 
       .ribbon {
-        font-size: 0.6rem !important;
+        font-size: 0.7em !important;
+      }
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .toggles--lg {
+      svg {
+        font-size: 2em !important;
+      }
+
+      .ribbon {
+        font-size: 0.6em !important;
       }
     }
   }
