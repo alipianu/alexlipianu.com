@@ -7,11 +7,16 @@ import { Ribbon, OverflowScroll } from '../../components/components';
 class PortfolioContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { activeId: 0 };
+    this.state = { activeId: 0, imageOverride: undefined };
+    this.loadMissing = this.loadMissing.bind(this);
   }
 
   selectItem(id) {
-    if (id !== this.state.activeId) this.setState({ activeId: id });
+    if (id !== this.state.activeId) this.setState({ activeId: id, imageOverride: undefined });
+  }
+
+  loadMissing() {
+    this.setState({ imageOverride: 'unavailable.jpg' });
   }
 
   render() {
@@ -33,7 +38,7 @@ class PortfolioContainer extends React.Component {
               <tbody>
                 <tr>
                   <td>
-                    <img className="carousel__img" alt={this.props.data.projects[this.state.activeId].title} src={this.props.data.projects[this.state.activeId].thumbnail} />
+                    <img className="carousel__img" alt={this.props.data.projects[this.state.activeId].title} src={this.state.imageOverride ? this.state.imageOverride : this.props.data.projects[this.state.activeId].thumbnail} onError={this.loadMissing} />
                   </td>
                   <td>
                     <div className="carousel__details">
