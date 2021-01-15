@@ -22,7 +22,7 @@ class LandingContainer extends React.Component {
 
   detectMobile() {
     const mobile = this.refHeadshot.current.getBoundingClientRect().bottom <= this.refRibbon.current.getBoundingClientRect().bottom;
-    if (mobile !== this.state.mobile) this.setState({mobile});
+    if (mobile !== this.state.mobile) this.setState({ mobile });
   }
 
   render() {
@@ -41,14 +41,14 @@ class LandingContainer extends React.Component {
             ))}
           </Ribbon>
           <p className="container-landing__education">{this.props.data.education}</p>
-          <p className="container-landing__past">
+          <h5 className="container-landing__past">
             {/* prevent whitespace wrapping of company names by grouping desired words into 'blocks' with white-space: no-wrap */}
             {this.props.data.past.map((block, key) => (
               <span key={key} className="format__textblock format__textblock--bar">
                 {block}
               </span>
             ))}
-          </p>
+          </h5>
           <Toggles isMobile={this.state.mobile} themeID={this.props.themeID} type="sm" data={this.props.data.social} />
         </div>
       </div>
